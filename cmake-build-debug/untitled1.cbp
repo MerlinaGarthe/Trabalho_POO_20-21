@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="untitled1"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/Users/merlinagarthe/CLionProjects/trabalho/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/merlinagarthe/CLionProjects/trabalho/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/merlinagarthe/CLionProjects/trabalho/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/merlinagarthe/CLionProjects/trabalho/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/merlinagarthe/CLionProjects/trabalho/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/Users/merlinagarthe/CLionProjects/trabalho/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/merlinagarthe/CLionProjects/trabalho/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/merlinagarthe/CLionProjects/trabalho/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/merlinagarthe/CLionProjects/trabalho/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/merlinagarthe/CLionProjects/trabalho/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/merlinagarthe/CLionProjects/trabalho/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/merlinagarthe/CLionProjects/trabalho/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/merlinagarthe/CLionProjects/trabalho/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/merlinagarthe/CLionProjects/trabalho/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/merlinagarthe/CLionProjects/trabalho/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="untitled1">
+				<Option output="/Users/merlinagarthe/CLionProjects/trabalho/cmake-build-debug/untitled1" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/merlinagarthe/CLionProjects/trabalho/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/merlinagarthe/CLionProjects/trabalho/cmake-build-debug/Makefile&quot;  VERBOSE=1 untitled1"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/merlinagarthe/CLionProjects/trabalho/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/merlinagarthe/CLionProjects/trabalho/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/merlinagarthe/CLionProjects/trabalho/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="untitled1/fast">
+				<Option output="/Users/merlinagarthe/CLionProjects/trabalho/cmake-build-debug/untitled1" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/merlinagarthe/CLionProjects/trabalho/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/merlinagarthe/CLionProjects/trabalho/cmake-build-debug/Makefile&quot;  VERBOSE=1 untitled1/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/merlinagarthe/CLionProjects/trabalho/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/merlinagarthe/CLionProjects/trabalho/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/merlinagarthe/CLionProjects/trabalho/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/merlinagarthe/CLionProjects/trabalho/Drone.cpp">
+			<Option target="untitled1"/>
+		</Unit>
+		<Unit filename="/Users/merlinagarthe/CLionProjects/trabalho/Drone.h">
+			<Option target="untitled1"/>
+		</Unit>
+		<Unit filename="/Users/merlinagarthe/CLionProjects/trabalho/castelo.cpp">
+			<Option target="untitled1"/>
+		</Unit>
+		<Unit filename="/Users/merlinagarthe/CLionProjects/trabalho/castelo.h">
+			<Option target="untitled1"/>
+		</Unit>
+		<Unit filename="/Users/merlinagarthe/CLionProjects/trabalho/continente.cpp">
+			<Option target="untitled1"/>
+		</Unit>
+		<Unit filename="/Users/merlinagarthe/CLionProjects/trabalho/continente.h">
+			<Option target="untitled1"/>
+		</Unit>
+		<Unit filename="/Users/merlinagarthe/CLionProjects/trabalho/duna.cpp">
+			<Option target="untitled1"/>
+		</Unit>
+		<Unit filename="/Users/merlinagarthe/CLionProjects/trabalho/duna.h">
+			<Option target="untitled1"/>
+		</Unit>
+		<Unit filename="/Users/merlinagarthe/CLionProjects/trabalho/fortaleza.cpp">
+			<Option target="untitled1"/>
+		</Unit>
+		<Unit filename="/Users/merlinagarthe/CLionProjects/trabalho/fortaleza.h">
+			<Option target="untitled1"/>
+		</Unit>
+		<Unit filename="/Users/merlinagarthe/CLionProjects/trabalho/ilhas.cpp">
+			<Option target="untitled1"/>
+		</Unit>
+		<Unit filename="/Users/merlinagarthe/CLionProjects/trabalho/ilhas.h">
+			<Option target="untitled1"/>
+		</Unit>
+		<Unit filename="/Users/merlinagarthe/CLionProjects/trabalho/interface.cpp">
+			<Option target="untitled1"/>
+		</Unit>
+		<Unit filename="/Users/merlinagarthe/CLionProjects/trabalho/interface.h">
+			<Option target="untitled1"/>
+		</Unit>
+		<Unit filename="/Users/merlinagarthe/CLionProjects/trabalho/logica.cpp">
+			<Option target="untitled1"/>
+		</Unit>
+		<Unit filename="/Users/merlinagarthe/CLionProjects/trabalho/logica.h">
+			<Option target="untitled1"/>
+		</Unit>
+		<Unit filename="/Users/merlinagarthe/CLionProjects/trabalho/main.cpp">
+			<Option target="untitled1"/>
+		</Unit>
+		<Unit filename="/Users/merlinagarthe/CLionProjects/trabalho/mina.cpp">
+			<Option target="untitled1"/>
+		</Unit>
+		<Unit filename="/Users/merlinagarthe/CLionProjects/trabalho/mina.h">
+			<Option target="untitled1"/>
+		</Unit>
+		<Unit filename="/Users/merlinagarthe/CLionProjects/trabalho/montanha.cpp">
+			<Option target="untitled1"/>
+		</Unit>
+		<Unit filename="/Users/merlinagarthe/CLionProjects/trabalho/montanha.h">
+			<Option target="untitled1"/>
+		</Unit>
+		<Unit filename="/Users/merlinagarthe/CLionProjects/trabalho/mundo.cpp">
+			<Option target="untitled1"/>
+		</Unit>
+		<Unit filename="/Users/merlinagarthe/CLionProjects/trabalho/mundo.h">
+			<Option target="untitled1"/>
+		</Unit>
+		<Unit filename="/Users/merlinagarthe/CLionProjects/trabalho/pescaria.cpp">
+			<Option target="untitled1"/>
+		</Unit>
+		<Unit filename="/Users/merlinagarthe/CLionProjects/trabalho/pescaria.h">
+			<Option target="untitled1"/>
+		</Unit>
+		<Unit filename="/Users/merlinagarthe/CLionProjects/trabalho/planicie.cpp">
+			<Option target="untitled1"/>
+		</Unit>
+		<Unit filename="/Users/merlinagarthe/CLionProjects/trabalho/planicie.h">
+			<Option target="untitled1"/>
+		</Unit>
+		<Unit filename="/Users/merlinagarthe/CLionProjects/trabalho/refugios.cpp">
+			<Option target="untitled1"/>
+		</Unit>
+		<Unit filename="/Users/merlinagarthe/CLionProjects/trabalho/refugios.h">
+			<Option target="untitled1"/>
+		</Unit>
+		<Unit filename="/Users/merlinagarthe/CLionProjects/trabalho/tecnologias.cpp">
+			<Option target="untitled1"/>
+		</Unit>
+		<Unit filename="/Users/merlinagarthe/CLionProjects/trabalho/tecnologias.h">
+			<Option target="untitled1"/>
+		</Unit>
+		<Unit filename="/Users/merlinagarthe/CLionProjects/trabalho/territorio.cpp">
+			<Option target="untitled1"/>
+		</Unit>
+		<Unit filename="/Users/merlinagarthe/CLionProjects/trabalho/territorio.h">
+			<Option target="untitled1"/>
+		</Unit>
+		<Unit filename="/Users/merlinagarthe/CLionProjects/trabalho/territorioJogador.cpp">
+			<Option target="untitled1"/>
+		</Unit>
+		<Unit filename="/Users/merlinagarthe/CLionProjects/trabalho/territorioJogador.h">
+			<Option target="untitled1"/>
+		</Unit>
+		<Unit filename="/Users/merlinagarthe/CLionProjects/trabalho/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

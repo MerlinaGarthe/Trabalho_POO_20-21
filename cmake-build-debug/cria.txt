@@ -1,0 +1,3 @@
+cria castelo 3
+cria montanha 2 
+cria duna 3

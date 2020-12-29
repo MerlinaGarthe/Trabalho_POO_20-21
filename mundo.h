@@ -1,0 +1,32 @@
+//
+// Created by Merlina Garthe on 01/12/2020.
+//
+
+#ifndef UNTITLED1_MUNDO_H
+#define UNTITLED1_MUNDO_H
+#include <iostream>
+#include <vector>
+#include "territorio.h"
+#include "territorioJogador.h"
+
+using namespace std;
+
+class Mundo {
+    vector<Territorio *> te;    //vetor onde se vai guardar os territorios existentes no mundo
+    TerritorioJogador tj;
+
+
+public:
+    Mundo() {}
+
+    ~Mundo();    //destrutor para no fim destroi o vetor dinamico
+    string getAsString() const;        //mostrar o conteudo do vetor
+    bool addTerritorio(string tipo, int quantidade);    //adicionar um territorio
+    bool conquista(string nome);    //conquista os territorio
+    void adquire(string tipo);
+    string imprimeTerritoriosJogador(); // imprimi o vetor de territorios conquistados
+    string imprimeMeu();
+    string imprimeTudo();
+};
+
+#endif
