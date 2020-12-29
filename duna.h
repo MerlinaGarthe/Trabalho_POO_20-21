@@ -15,11 +15,10 @@ class Duna: public Territorio
     static int num;
     int conta;
     int resistencia;
-    int criacao_ouro;
     int criacao_p ;	// produz 1 unidade de produtos
     int pontos ;
 public:
-    Duna(string tipo = "Duna",   int resistencia = 4,int criacao_p = 1,int criacao_o=1,int pontos = 1): conta (num++), Territorio(tipo,num,resistencia,criacao_p,criacao_o, pontos) {}
+    Duna(string tipo = "Duna",   int resistencia = 4,int criacao_p = 0,int pontos = 1): conta (num++), Territorio(tipo,num,resistencia,criacao_p,0, pontos) {}
     string getAsStringD() const;
 };
 

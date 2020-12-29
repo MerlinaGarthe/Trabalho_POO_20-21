@@ -64,6 +64,7 @@ void TerritorioJogador::conquista(Territorio &ter) {
         }
         else
             pontos += ter.getPontos();
+        cout << aviso() <<endl;
 
     }
     else
@@ -210,6 +211,21 @@ bool TerritorioJogador::maismilitar() {
         return true;
 
     return false;
+}
+
+bool TerritorioJogador::encontra() {
+    for(int i =0; i < tecno.size(); i++)
+    {
+        if(tecno[i]->getTipo() == "misseis_teleguiados" || tecno[i]->getTipo() == "Misseis_Teleguiados")
+            return true;
+    }
+    return false;
+}
+
+string TerritorioJogador::aviso() const {
+    ostringstream os;
+    os << "Conseguiu conquistar este territorio!" << forcamilitar << endl;
+    return os.str();
 }
 
 

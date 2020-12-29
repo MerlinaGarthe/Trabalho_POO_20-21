@@ -65,13 +65,7 @@ bool Mundo::addTerritorio(string tipo, int quantidade)
         }
         return true;
     }
-    if(tipo == "pescaria" || tipo == "Pescaria") {
-        for (int i = 0; i < quantidade; i++) {
-            te.push_back(new Pescaria());// vamos adicionar territoirios ao nosso vetor de territorio
 
-        }
-        return true;
-    }
     if(tipo == "planicie" || tipo == "Planicie") {
         for (int i = 0; i < quantidade; i++) {
             te.push_back(new Planicie());// vamos adicionar territoirios ao nosso vetor de territorio
@@ -79,15 +73,25 @@ bool Mundo::addTerritorio(string tipo, int quantidade)
         }
         return true;
     }
-    if(tipo == "refugios" || tipo == "Refugios") {
-        for (int i = 0; i < quantidade; i++) {
-            te.push_back(new Refugios());// vamos adicionar territoirios ao nosso vetor de territorio
+    if(tj.encontra()) {
+        if (tipo == "pescaria" || tipo == "Pescaria") {
+            for (int i = 0; i < quantidade; i++) {
+                te.push_back(new Pescaria());// vamos adicionar territoirios ao nosso vetor de territorio
 
+            }
+            return true;
         }
-        return true;
+        if (tipo == "refugios" || tipo == "Refugios") {
+            for (int i = 0; i < quantidade; i++) {
+                te.push_back(new Refugios());// vamos adicionar territoirios ao nosso vetor de territorio
+
+            }
+            return true;
+        }
     }
-   // }
-    //return false;
+
+
+    return false;
 
 
 }

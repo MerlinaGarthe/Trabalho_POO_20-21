@@ -43,7 +43,9 @@ public:
    // string getTipo() const;
     bool maisOuro();
     bool maisproduto();
-    bool maismilitar();
+   bool maismilitar();
+   bool encontra();
+   string aviso() const;
 };
 
 #endif
