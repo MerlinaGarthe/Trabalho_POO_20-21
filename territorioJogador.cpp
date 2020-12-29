@@ -169,23 +169,47 @@ void TerritorioJogador::adquire(string tipo) {
 
 bool TerritorioJogador::maisOuro() {
 
-    cout << produtos;
-    return true;
-        /*if (produtos >= 2)
+
+        if (produtos >= 2)
         {
-            cout << "LALALALAALLA";
             if (ouro != cofremax) { // o max é 3 logo se tivemos no max nao incrementa
                 ouro++;
             }
             produtos -= 2;
             return true;
         }
-        return false;*/
+        return false;
 
+}
+
+bool TerritorioJogador::maisproduto() {
+    if (ouro >= 2)
+    {
+        if (produtos != armazemmax)
+        {
+            produtos++;
+        }
+        ouro -= 2;
+        return true;
+    }
+    return false;
 }
 
 int TerritorioJogador::getOuro() {
     return ouro;
+}
+
+bool TerritorioJogador::maismilitar() {
+
+        if (forcamilitar != limforca)
+        {
+            forcamilitar++;
+        }
+        ouro --;
+        produtos--;
+        return true;
+
+    return false;
 }
 
 

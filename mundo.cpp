@@ -135,6 +135,23 @@ void Mundo::adquire(string tipo)  {
     return tj.adquire(tipo);
 }
 
+bool Mundo::ouro() {
+    tj.maisOuro();
+    return true;
+}
+
+bool Mundo::produto() {
+    tj.maisproduto();
+    return true;
+}
+
+bool Mundo::militar() {
+    tj.maismilitar();
+    return true;
+}
+
+
+
 
 
 

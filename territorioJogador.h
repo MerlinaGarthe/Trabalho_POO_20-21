@@ -42,6 +42,8 @@ public:
     void adquire(string tipo) ;
    // string getTipo() const;
     bool maisOuro();
+    bool maisproduto();
+    bool maismilitar();
 };
 
 #endif

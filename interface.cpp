@@ -101,7 +101,19 @@ void Interface::comandosi() //aqui vamos verificar os comando cria, lista e carr
         else if(comando_cmp == "adquire")
         {
            m.adquire(tipo_t);
-          //tj->maisOuro();
+
+        }
+        else if(comando_cmp == "maisouro")
+        {
+            m.ouro();
+        }
+        else if(comando_cmp == "maisprod")
+        {
+            m.produto();
+        }
+        else if(comando_cmp == "maismilitar")
+        {
+            m.militar();
         }
 
     } while (comando != "terminar");
@@ -111,6 +123,7 @@ void Interface::mostra(string tipo)
 {
     if (tipo == "tudo")
     {
+        cout << m.imprimeTudo() << endl;
       cout << m.getAsString() << endl; //este é o que falta, o resto serve para mostrar a informação de cada cena (AH AINDA NÃO CRIEI A CENAS DAS ILHAS TEMOS DE FAZER ISSO MAS O PROCESSO É IGUAL)
 
     }

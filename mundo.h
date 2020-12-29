@@ -27,6 +27,9 @@ public:
     string imprimeTerritoriosJogador(); // imprimi o vetor de territorios conquistados
     string imprimeMeu();
     string imprimeTudo();
+    bool ouro();
+    bool produto();
+    bool militar();
 };
 
 #endif
