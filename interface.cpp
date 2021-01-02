@@ -132,36 +132,36 @@ void Interface::mostra(string tipo)
         cout << m.imprimeTerritoriosJogador() << endl;
 
     }
-    else if (tipo == "castelo")
-    {
-       //cout << c.getAsStringC() << endl;
-    }
-    else if (tipo == "duna")
-    {
-        cout << d.getAsStringD() << endl;
-    }
-    else if (tipo == "fortaleza")
-    {
-        cout << f.getAsStringF() << endl;
-    }
-    else if (tipo == "mina")
-    {
-        cout << mina.getAsStringM() << endl;
-    }
-    else if (tipo == "montanha")
-    {
-        cout << montanha.getAsStringMO() << endl;
-    }
-    else if (tipo == "planicie")
-    {
-        cout << p.getAsStringP() << endl;
-    }
-    else if (tipo == "pescaria")
-    {
-        cout << pesc.getAsStringP() << endl;
-    }
-    else if(tipo=="refugio")
-    {
-        cout << r.getAsStringP() << endl;
-    }
+
+    /* else if (tipo == "castelo")
+      {
+         cout << c.getAsString() << endl;
+            /*else if (tipo == "duna")
+      {
+          cout << d.getAsStringD() << endl;
+      }
+      else if (tipo == "fortaleza")
+      {
+          cout << f.getAsStringF() << endl;
+      }
+      else if (tipo == "mina")
+      {
+          cout << mina.getAsStringM() << endl;
+      }
+      else if (tipo == "montanha")
+      {
+          cout << montanha.getAsStringMO() << endl;
+      }
+      else if (tipo == "planicie")
+      {
+          cout << p.getAsStringP() << endl;
+      }
+      else if (tipo == "pescaria")
+      {
+          cout << pesc.getAsStringP() << endl;
+      }
+      else if(tipo=="refugio")
+      {
+          cout << r.getAsStringP() << endl;
+      }*/
 }

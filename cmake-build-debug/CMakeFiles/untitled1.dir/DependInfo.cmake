@@ -4,7 +4,6 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/merlinagarthe/CLionProjects/trabalho/Drone.cpp" "/Users/merlinagarthe/CLionProjects/trabalho/cmake-build-debug/CMakeFiles/untitled1.dir/Drone.cpp.o"
   "/Users/merlinagarthe/CLionProjects/trabalho/castelo.cpp" "/Users/merlinagarthe/CLionProjects/trabalho/cmake-build-debug/CMakeFiles/untitled1.dir/castelo.cpp.o"
   "/Users/merlinagarthe/CLionProjects/trabalho/continente.cpp" "/Users/merlinagarthe/CLionProjects/trabalho/cmake-build-debug/CMakeFiles/untitled1.dir/continente.cpp.o"
   "/Users/merlinagarthe/CLionProjects/trabalho/duna.cpp" "/Users/merlinagarthe/CLionProjects/trabalho/cmake-build-debug/CMakeFiles/untitled1.dir/duna.cpp.o"

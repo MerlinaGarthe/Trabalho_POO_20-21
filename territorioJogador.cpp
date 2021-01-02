@@ -229,4 +229,10 @@ string TerritorioJogador::aviso() const {
 }
 
 
-
+bool TerritorioJogador::tam() {
+  if(territorios.size() > 5)
+  {
+      return true;
+  }
+    return false;
+}

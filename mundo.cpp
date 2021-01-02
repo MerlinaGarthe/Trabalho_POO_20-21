@@ -73,7 +73,6 @@ bool Mundo::addTerritorio(string tipo, int quantidade)
         }
         return true;
     }
-    if(tj.encontra()) {
         if (tipo == "pescaria" || tipo == "Pescaria") {
             for (int i = 0; i < quantidade; i++) {
                 te.push_back(new Pescaria());// vamos adicionar territoirios ao nosso vetor de territorio
@@ -87,7 +86,7 @@ bool Mundo::addTerritorio(string tipo, int quantidade)
 
             }
             return true;
-        }
+
     }
 
 

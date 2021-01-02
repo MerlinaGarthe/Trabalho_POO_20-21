@@ -7,10 +7,4 @@
 int Pescaria::num =-1;
 
 
-string Pescaria::getAsStringP() const
-{
-    ostringstream os;
 
-    os << "\n" << nome << " \n Resistencia :" << resistencia << " Com criaÁao de produtos em :" << criacao_p << " unidade, " ;
-    return os.str();
-}

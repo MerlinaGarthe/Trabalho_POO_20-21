@@ -46,6 +46,7 @@ public:
    bool maismilitar();
    bool encontra();
    string aviso() const;
+   bool tam() ;
 };
 
 #endif
