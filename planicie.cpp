@@ -5,5 +5,5 @@
 #include "planicie.h"
 #include <sstream>
 
-int Planicie::num = -1;
+int Planicie::num = 1;
 

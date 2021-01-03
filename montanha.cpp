@@ -5,6 +5,6 @@
 #include "montanha.h"
 #include <sstream>
 
-int Montanha::num =-1;
+int Montanha::num = 1;
 
 

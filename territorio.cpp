@@ -38,7 +38,7 @@ int Territorio::getPontos()
 
 string Territorio::getAsString() const {
    ostringstream os;
-   os << tipo << conta ;
+   os << nome;
    os << ",Resistencia-> " << resistencia  << endl;
   return os.str();
 }

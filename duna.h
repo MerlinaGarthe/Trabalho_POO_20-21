@@ -16,7 +16,7 @@ class Duna: public Continente
     int conta;
 
 public:
-    Duna(string tipo = "Duna",   int resistencia = 4,int criacao_p = 0,int criacao_o= 2,int pontos = 1): conta (num++), Continente(tipo,num,resistencia,criacao_p,criacao_o, pontos) {}
+    Duna(string tipo = "Duna",   int resistencia = 4,int criacao_p = 0,int pontos = 1): conta (num++), Continente(tipo,num,resistencia,criacao_p,0, pontos) {}
     string getAsStringD() const;
 };
 

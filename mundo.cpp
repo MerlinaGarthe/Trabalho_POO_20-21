@@ -154,6 +154,46 @@ bool Mundo::militar() {
 }
 
 
+//esta toma serve para o comando toma que serve para o DEBUG
+bool Mundo::toma(string nome) {
+
+    for (int i = 0; i < (int)te.size(); i++)
+    {
+
+        if (te[i]->getNome()==nome )
+        {
+
+            tj.toma(*te[i]);   // se sim envio esse territorio para este função
+        }
+
+    }
+
+    return true;
+}
+
+void Mundo::tomatec(string tipo) {
+    return tj.tomatec(tipo);
+}
+
+bool Mundo::mudaOuro(int quantidade) {
+   tj.mudaOuro(quantidade);
+    return true;
+}
+
+bool Mundo::mudaProd(int quantidade) {
+    tj.mudaProd(quantidade);
+    return true;
+}
+
+void Mundo::evento() {
+    return tj.evento();
+}
+
+void Mundo::eventoforcado(string tipo) {
+    return tj.eventoforcado(tipo);
+}
+
+
 
 
 

@@ -6,32 +6,28 @@
 #define UNTITLED1_LOGICA_H
 #include "mundo.h"
 #include <iostream>
-#include "castelo.h"
-#include "duna.h"
-#include "fortaleza.h"
-#include "mina.h"
-#include "montanha.h"
-#include "planicie.h"
-#include "pescaria.h"
-#include "refugios.h"
-#include "territorioJogador.h"
 
 using namespace std;
 
 class Logica {
     Mundo m;
-    Castelo c;
-    Duna d;
-    Fortaleza f;
-    Mina mina;
-    Montanha montanha;
-    Planicie p;
-    Pescaria pesc;
-    Refugios r;
+
 public:
     bool addTerritorio(string tipo, int quant);
-    string mostra() ;
+    string mostra() const ;
+    bool conquista(string tipo);
+    string lista() ;
+    bool adquire(string tipo);
+    bool mouro();
+    bool mproduto();
+    bool mmilitar();
+    string territorioJogador();
+    bool tomaterr(string tipo);
+    bool tomatec(string tipo);
+    bool mudaOuro(int quant);
+    bool mudaProd(int quant);
+    bool evento();
+    bool eventoforcado(string tipo);
 };
-
 
 #endif //UNTITLED1_LOGICA_H

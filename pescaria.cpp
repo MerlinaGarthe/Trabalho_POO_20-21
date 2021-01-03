@@ -4,7 +4,7 @@
 
 #include "pescaria.h"
 #include <sstream>
-int Pescaria::num =-1;
+int Pescaria::num = 1;
 
 
 

@@ -5,6 +5,6 @@
 #include "refugios.h"
 #include <sstream>
 
-int Refugios::num = -1;
+int Refugios::num = 1;
 
 

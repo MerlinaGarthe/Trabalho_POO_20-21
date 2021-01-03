@@ -47,6 +47,15 @@ public:
    bool encontra();
    string aviso() const;
    bool tam() ;
+   void toma(Territorio &ter);
+   void tomatec(string tipo);
+   bool mudaOuro(int quant);
+   bool mudaProd(int quant);
+   int randomevento();
+   void evento();
+   int randomsorte();
+   void eventoforcado(string tipo);
+
 };
 
 #endif

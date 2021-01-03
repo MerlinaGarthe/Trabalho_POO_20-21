@@ -5,6 +5,6 @@
 #include "mina.h"
 #include <sstream>
 
-int Mina::num = -1;
+int Mina::num = 1;
 
 

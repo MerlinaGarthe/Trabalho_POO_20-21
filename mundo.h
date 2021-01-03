@@ -30,6 +30,12 @@ public:
     bool ouro();
     bool produto();
     bool militar();
+    bool toma(string nome);
+    void tomatec(string tipo);
+    bool mudaOuro(int quantidade);
+    bool mudaProd(int quantidade);
+    void evento();
+    void eventoforcado(string tipo);
 };
 
 #endif

@@ -5,7 +5,7 @@
 #include "castelo.h"
 #include <sstream>
 
-int Castelo::num = -1;
+int Castelo::num = 1;
 
 string Castelo::getAsString() const {
     ostringstream os;

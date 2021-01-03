@@ -5,7 +5,7 @@
 #include "fortaleza.h"
 #include <sstream>
 
-int Fortaleza::num =-1;
+int Fortaleza::num = 1;
 
 
 

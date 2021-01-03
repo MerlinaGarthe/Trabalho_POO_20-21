@@ -5,7 +5,7 @@
 #include "duna.h"
 #include <sstream>
 
-int Duna::num = -1;
+int Duna::num = 1;
 
 
 
