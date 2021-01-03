@@ -7,18 +7,18 @@
 #include <iostream>
 #include <string>
 #include <sstream>
-#include "territorio.h"
+#include "continente.h"
 using namespace std;
 
 
 
-class Castelo : public Territorio
+class Castelo : public Continente
 {
     static int num;
     int conta;
 
 public:
-    Castelo(string tp = "Castelo",   int resistencia = 7,int criacao_p = 0,int criacao_o = 0,int pontos = 1) : conta (num++),Territorio(tp,num,resistencia,criacao_p, criacao_o, pontos) {}
+    Castelo(string tp = "Castelo",   int resistencia = 7,int criacao_p = 0,int criacao_o = 0,int pontos = 1) : conta (num++),Continente(tp,num,resistencia,criacao_p, criacao_o, pontos) {}
     string getAsString() const;
 };
 

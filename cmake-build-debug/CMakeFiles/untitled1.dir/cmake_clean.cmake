@@ -15,6 +15,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/untitled1.dir/refugios.cpp.o"
   "CMakeFiles/untitled1.dir/tecnologias.cpp.o"
   "CMakeFiles/untitled1.dir/territorio.cpp.o"
+  "CMakeFiles/untitled1.dir/territorioI.cpp.o"
   "CMakeFiles/untitled1.dir/territorioJogador.cpp.o"
   "untitled1"
   "untitled1.pdb"

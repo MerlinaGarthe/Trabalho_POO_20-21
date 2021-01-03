@@ -5,18 +5,17 @@
 #define FORTALEZA_H
 #include <iostream>
 #include <string>
-#include "territorio.h"
+#include "continente.h"
 using namespace std;
 
-class Fortaleza : public Territorio
+class Fortaleza : public Continente
 {
-    string nome = "Fortaleza";
+
     int conta;
     static int num;
-    int resistencia = 8;
-    int pontos = 1;
+
 public:
-    Fortaleza(string tipo = "Fortaleza",   int resistencia = 8,int pontos = 1) : conta(num++), Territorio(tipo,num,resistencia,0, 0, pontos) {}
+    Fortaleza(string tipo = "Fortaleza",   int resistencia = 8,int pontos = 1) : conta(num++), Continente(tipo,num,resistencia,0, 0, pontos) {}
     string getAsStringF() const;
 };
 

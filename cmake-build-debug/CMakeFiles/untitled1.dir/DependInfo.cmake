@@ -20,6 +20,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/merlinagarthe/CLionProjects/trabalho/refugios.cpp" "/Users/merlinagarthe/CLionProjects/trabalho/cmake-build-debug/CMakeFiles/untitled1.dir/refugios.cpp.o"
   "/Users/merlinagarthe/CLionProjects/trabalho/tecnologias.cpp" "/Users/merlinagarthe/CLionProjects/trabalho/cmake-build-debug/CMakeFiles/untitled1.dir/tecnologias.cpp.o"
   "/Users/merlinagarthe/CLionProjects/trabalho/territorio.cpp" "/Users/merlinagarthe/CLionProjects/trabalho/cmake-build-debug/CMakeFiles/untitled1.dir/territorio.cpp.o"
+  "/Users/merlinagarthe/CLionProjects/trabalho/territorioI.cpp" "/Users/merlinagarthe/CLionProjects/trabalho/cmake-build-debug/CMakeFiles/untitled1.dir/territorioI.cpp.o"
   "/Users/merlinagarthe/CLionProjects/trabalho/territorioJogador.cpp" "/Users/merlinagarthe/CLionProjects/trabalho/cmake-build-debug/CMakeFiles/untitled1.dir/territorioJogador.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")

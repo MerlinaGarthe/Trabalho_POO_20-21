@@ -6,19 +6,17 @@
 #define DUNA_H
 #include <iostream>
 #include <string>
-#include "territorio.h"
+#include "continente.h"
 using namespace std;
 
-class Duna: public Territorio
+class Duna: public Continente
 {
-    string nome = "Duna";
+
     static int num;
     int conta;
-    int resistencia;
-    int criacao_p ;	// produz 1 unidade de produtos
-    int pontos ;
+
 public:
-    Duna(string tipo = "Duna",   int resistencia = 4,int criacao_p = 0,int pontos = 1): conta (num++), Territorio(tipo,num,resistencia,criacao_p,0, pontos) {}
+    Duna(string tipo = "Duna",   int resistencia = 4,int criacao_p = 0,int criacao_o= 2,int pontos = 1): conta (num++), Continente(tipo,num,resistencia,criacao_p,criacao_o, pontos) {}
     string getAsStringD() const;
 };
 

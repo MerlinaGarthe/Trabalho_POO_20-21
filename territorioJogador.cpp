@@ -43,39 +43,70 @@ int TerritorioJogador::random() {
 
 void TerritorioJogador::conquista(Territorio &ter) {
 
-    int j=forcamilitar + random();   //soma se a força militar mais o tal numero random
+    int j = forcamilitar + random();   //soma se a força militar mais o tal numero random
 
-    if(j>= ter.getResis())  //se a forca militar (já somada) for maior à resitencia do suposto territorio
-    {
-
-        territorios.push_back(&ter);    //metemos apontar para o tal territorio(não se faz o new porque nós não queremos memoria dinamica mas sim oara que este vetor aponte para o objeto do outro)
-        if(ouro < cofremax)
-
-
-           ouro +=  ter.getOuro() ;//soma se o ouro e os produtos da conquist
-
-        if(produtos < armazemmax)
-            produtos += ter.getProd();
-
-
-        if(ter.getTipo() == "refugio"  || ter.getTipo()=="pescaria")
+    if (ter.getTipo() == "Castelo" || ter.getTipo() == "Duna" || ter.getTipo() == "Fortaleza" ||
+        ter.getTipo() == "Mina" || ter.getTipo() == "Montanha"  ||
+        ter.getTipo() == "Planicie") {
+        if (j >= ter.getResis())  //se a forca militar (já somada) for maior à resitencia do suposto territorio
         {
-            pontos +=2* ter.getPontos();
-        }
-        else
+
+            territorios.push_back(
+                    &ter);    //metemos apontar para o tal territorio(não se faz o new porque nós não queremos memoria dinamica mas sim oara que este vetor aponte para o objeto do outro)
+            if (ouro < cofremax)
+
+
+                ouro += ter.getOuro();//soma se o ouro e os produtos da conquist
+
+            if (produtos < armazemmax)
+                produtos += ter.getProd();
+
+
+            /*if(ter.getTipo() == "refugio"  || ter.getTipo()=="pescaria")
+             {
+                 pontos +=2* ter.getPontos();
+             }
+             else*/
             pontos += ter.getPontos();
-        cout << aviso() <<endl;
+            cout << aviso() << endl;
+        }
 
-    }
-    else
-    {
-        if(forcamilitar>0)          // se não conseguir conquistar a força militar diminui
-            forcamilitar--;
+    }else if (ter.getTipo() == "Pescaria" || ter.getTipo() == "Refugios") {
+            if (tam() && encontra()) {
+                if (j >= ter.getResis())  //se a forca militar (já somada) for maior à resitencia do suposto territorio
+                {
 
-    }
+                    territorios.push_back(
+                            &ter);    //metemos apontar para o tal territorio(não se faz o new porque nós não queremos memoria dinamica mas sim oara que este vetor aponte para o objeto do outro)
+                    if (ouro < cofremax)
+
+
+                        ouro += ter.getOuro();//soma se o ouro e os produtos da conquist
+
+                    if (produtos < armazemmax)
+                        produtos += ter.getProd();
+
+
+                    if (ter.getTipo() == "refugio" || ter.getTipo() == "pescaria") {
+                        pontos += 2 * ter.getPontos();
+                    }
+
+
+                    cout << aviso() << endl;
+                }
+            }
+        else
+            {
+            cout << "Não possui materiais suficientes para conquistar" << endl;
+            }
+        } else {
+            if (forcamilitar > 0)          // se não conseguir conquistar a força militar diminui
+                forcamilitar--;
+
+        }
+
 
 }
-
 string TerritorioJogador::getAsString() const
 {
     ostringstream os;
@@ -99,7 +130,7 @@ string TerritorioJogador::getAsString2() const
 
     for (int i = 0; i < (int)territorios.size(); i++)	//percorre o vetor
     {
-        os << territorios[i]->getNome() << "-> Criacao de ouro: " << criacao_o << ", Criacao de produtos: " << criacao_p << "\n";
+        os << territorios[i]->getNome() << "-> Criacao de ouro: " << ouro << ", Criacao de produtos: " << criacao_p << "\n";
         os << "Pontos vitoria do Imperio: " << pontos << "\n";
         os << "Resistencia ->" << resistencia << " ,ForçaMilitar -> " << forcamilitar << endl;
 

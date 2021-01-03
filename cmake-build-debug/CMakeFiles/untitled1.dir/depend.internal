@@ -4,26 +4,32 @@
 CMakeFiles/untitled1.dir/castelo.cpp.o
  /Users/merlinagarthe/CLionProjects/trabalho/castelo.cpp
  /Users/merlinagarthe/CLionProjects/trabalho/castelo.h
+ /Users/merlinagarthe/CLionProjects/trabalho/continente.h
  /Users/merlinagarthe/CLionProjects/trabalho/territorio.h
 CMakeFiles/untitled1.dir/continente.cpp.o
  /Users/merlinagarthe/CLionProjects/trabalho/continente.cpp
  /Users/merlinagarthe/CLionProjects/trabalho/continente.h
+ /Users/merlinagarthe/CLionProjects/trabalho/territorio.h
 CMakeFiles/untitled1.dir/duna.cpp.o
+ /Users/merlinagarthe/CLionProjects/trabalho/continente.h
  /Users/merlinagarthe/CLionProjects/trabalho/duna.cpp
  /Users/merlinagarthe/CLionProjects/trabalho/duna.h
  /Users/merlinagarthe/CLionProjects/trabalho/territorio.h
 CMakeFiles/untitled1.dir/fortaleza.cpp.o
+ /Users/merlinagarthe/CLionProjects/trabalho/continente.h
  /Users/merlinagarthe/CLionProjects/trabalho/fortaleza.cpp
  /Users/merlinagarthe/CLionProjects/trabalho/fortaleza.h
  /Users/merlinagarthe/CLionProjects/trabalho/territorio.h
 CMakeFiles/untitled1.dir/ilhas.cpp.o
  /Users/merlinagarthe/CLionProjects/trabalho/ilhas.cpp
  /Users/merlinagarthe/CLionProjects/trabalho/ilhas.h
+ /Users/merlinagarthe/CLionProjects/trabalho/territorio.h
 CMakeFiles/untitled1.dir/interface.cpp.o
  /Users/merlinagarthe/CLionProjects/trabalho/castelo.h
  /Users/merlinagarthe/CLionProjects/trabalho/continente.h
  /Users/merlinagarthe/CLionProjects/trabalho/duna.h
  /Users/merlinagarthe/CLionProjects/trabalho/fortaleza.h
+ /Users/merlinagarthe/CLionProjects/trabalho/ilhas.h
  /Users/merlinagarthe/CLionProjects/trabalho/interface.cpp
  /Users/merlinagarthe/CLionProjects/trabalho/interface.h
  /Users/merlinagarthe/CLionProjects/trabalho/logica.h
@@ -41,6 +47,7 @@ CMakeFiles/untitled1.dir/logica.cpp.o
  /Users/merlinagarthe/CLionProjects/trabalho/continente.h
  /Users/merlinagarthe/CLionProjects/trabalho/duna.h
  /Users/merlinagarthe/CLionProjects/trabalho/fortaleza.h
+ /Users/merlinagarthe/CLionProjects/trabalho/ilhas.h
  /Users/merlinagarthe/CLionProjects/trabalho/logica.cpp
  /Users/merlinagarthe/CLionProjects/trabalho/logica.h
  /Users/merlinagarthe/CLionProjects/trabalho/mina.h
@@ -57,6 +64,7 @@ CMakeFiles/untitled1.dir/main.cpp.o
  /Users/merlinagarthe/CLionProjects/trabalho/continente.h
  /Users/merlinagarthe/CLionProjects/trabalho/duna.h
  /Users/merlinagarthe/CLionProjects/trabalho/fortaleza.h
+ /Users/merlinagarthe/CLionProjects/trabalho/ilhas.h
  /Users/merlinagarthe/CLionProjects/trabalho/interface.h
  /Users/merlinagarthe/CLionProjects/trabalho/logica.h
  /Users/merlinagarthe/CLionProjects/trabalho/main.cpp
@@ -70,6 +78,7 @@ CMakeFiles/untitled1.dir/main.cpp.o
  /Users/merlinagarthe/CLionProjects/trabalho/territorio.h
  /Users/merlinagarthe/CLionProjects/trabalho/territorioJogador.h
 CMakeFiles/untitled1.dir/mina.cpp.o
+ /Users/merlinagarthe/CLionProjects/trabalho/continente.h
  /Users/merlinagarthe/CLionProjects/trabalho/mina.cpp
  /Users/merlinagarthe/CLionProjects/trabalho/mina.h
  /Users/merlinagarthe/CLionProjects/trabalho/territorio.h
@@ -83,6 +92,7 @@ CMakeFiles/untitled1.dir/mundo.cpp.o
  /Users/merlinagarthe/CLionProjects/trabalho/continente.h
  /Users/merlinagarthe/CLionProjects/trabalho/duna.h
  /Users/merlinagarthe/CLionProjects/trabalho/fortaleza.h
+ /Users/merlinagarthe/CLionProjects/trabalho/ilhas.h
  /Users/merlinagarthe/CLionProjects/trabalho/mina.h
  /Users/merlinagarthe/CLionProjects/trabalho/montanha.h
  /Users/merlinagarthe/CLionProjects/trabalho/mundo.cpp
@@ -94,14 +104,17 @@ CMakeFiles/untitled1.dir/mundo.cpp.o
  /Users/merlinagarthe/CLionProjects/trabalho/territorio.h
  /Users/merlinagarthe/CLionProjects/trabalho/territorioJogador.h
 CMakeFiles/untitled1.dir/pescaria.cpp.o
+ /Users/merlinagarthe/CLionProjects/trabalho/ilhas.h
  /Users/merlinagarthe/CLionProjects/trabalho/pescaria.cpp
  /Users/merlinagarthe/CLionProjects/trabalho/pescaria.h
  /Users/merlinagarthe/CLionProjects/trabalho/territorio.h
 CMakeFiles/untitled1.dir/planicie.cpp.o
+ /Users/merlinagarthe/CLionProjects/trabalho/continente.h
  /Users/merlinagarthe/CLionProjects/trabalho/planicie.cpp
  /Users/merlinagarthe/CLionProjects/trabalho/planicie.h
  /Users/merlinagarthe/CLionProjects/trabalho/territorio.h
 CMakeFiles/untitled1.dir/refugios.cpp.o
+ /Users/merlinagarthe/CLionProjects/trabalho/ilhas.h
  /Users/merlinagarthe/CLionProjects/trabalho/refugios.cpp
  /Users/merlinagarthe/CLionProjects/trabalho/refugios.h
  /Users/merlinagarthe/CLionProjects/trabalho/territorio.h
@@ -111,6 +124,9 @@ CMakeFiles/untitled1.dir/tecnologias.cpp.o
 CMakeFiles/untitled1.dir/territorio.cpp.o
  /Users/merlinagarthe/CLionProjects/trabalho/territorio.cpp
  /Users/merlinagarthe/CLionProjects/trabalho/territorio.h
+CMakeFiles/untitled1.dir/territorioI.cpp.o
+ /Users/merlinagarthe/CLionProjects/trabalho/territorioI.cpp
+ /Users/merlinagarthe/CLionProjects/trabalho/territorioI.h
 CMakeFiles/untitled1.dir/territorioJogador.cpp.o
  /Users/merlinagarthe/CLionProjects/trabalho/mundo.h
  /Users/merlinagarthe/CLionProjects/trabalho/tecnologias.h

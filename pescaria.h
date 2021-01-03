@@ -6,17 +6,17 @@
 #define PESCARIA_H
 #include <iostream>
 #include <string>
-#include "territorio.h"
+#include "ilhas.h"
 using namespace std;
 
-class Pescaria : public Territorio
+class Pescaria : public Ilhas
 {
     int conta;
     static int num;
 
 
 public:
-    Pescaria(string tipo = "Pescaria",   int resis = 9, int p = 2,int pon = 2): conta(num++), Territorio(tipo, num,resis,p,0, pon) {}
+    Pescaria(string tipo = "Pescaria",   int resis = 9, int p = 2,int pon = 2): conta(num++), Ilhas(tipo, num,resis,p,0, pon) {}
 
 
 };

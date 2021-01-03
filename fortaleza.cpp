@@ -8,9 +8,4 @@
 int Fortaleza::num =-1;
 
 
-string Fortaleza::getAsStringF() const
-{
-    ostringstream os;
-    os << "\n" << nome << " \n Com resistencia: " << resistencia ;
-    return os.str();
-}
+

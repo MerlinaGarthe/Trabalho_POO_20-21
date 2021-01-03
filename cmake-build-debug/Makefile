@@ -575,6 +575,33 @@ territorio.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled1.dir/build.make CMakeFiles/untitled1.dir/territorio.cpp.s
 .PHONY : territorio.cpp.s
 
+territorioI.o: territorioI.cpp.o
+
+.PHONY : territorioI.o
+
+# target to build an object file
+territorioI.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled1.dir/build.make CMakeFiles/untitled1.dir/territorioI.cpp.o
+.PHONY : territorioI.cpp.o
+
+territorioI.i: territorioI.cpp.i
+
+.PHONY : territorioI.i
+
+# target to preprocess a source file
+territorioI.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled1.dir/build.make CMakeFiles/untitled1.dir/territorioI.cpp.i
+.PHONY : territorioI.cpp.i
+
+territorioI.s: territorioI.cpp.s
+
+.PHONY : territorioI.s
+
+# target to generate assembly for a file
+territorioI.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled1.dir/build.make CMakeFiles/untitled1.dir/territorioI.cpp.s
+.PHONY : territorioI.cpp.s
+
 territorioJogador.o: territorioJogador.cpp.o
 
 .PHONY : territorioJogador.o
@@ -659,6 +686,9 @@ help:
 	@echo "... territorio.o"
 	@echo "... territorio.i"
 	@echo "... territorio.s"
+	@echo "... territorioI.o"
+	@echo "... territorioI.i"
+	@echo "... territorioI.s"
 	@echo "... territorioJogador.o"
 	@echo "... territorioJogador.i"
 	@echo "... territorioJogador.s"
