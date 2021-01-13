@@ -22,14 +22,14 @@ class TerritorioJogador
     int criacao_p ;
     int criacao_o ;
     int pontos;
-    int forcamilitar ; //Nivel de forÁa militar, falta fazer o nivel
+   int forcamilitar ; //Nivel de forÁa militar, falta fazer o nivel
     int limforca;
-    int ouro;
-     int produtos;
+   int ouro;
+   int produtos;
 public:
     ~TerritorioJogador();
-  // TerritorioJogador(string nome, int res=9, int p=0, int o=0, int pon=0, int forca=3, int cofre=3, int armazem=3);
-    TerritorioJogador();
+
+    TerritorioJogador() ;
     string getForcaMil();
     string getResis();
     //string getNome() const;
@@ -55,7 +55,8 @@ public:
    void evento();
    int randomsorte();
    void eventoforcado(string tipo);
-
+    bool verifica (Territorio &ter);
+    string aviso_final();
 };
 
 #endif

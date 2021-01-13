@@ -7,6 +7,7 @@
 #include <iostream>
 #include <string>
 
+
 using namespace std;
 
 class Territorio
@@ -20,7 +21,7 @@ class Territorio
     int pontos ;
 public:
 
-    Territorio(string tp, int ct, int resis, int prod, int ou, int pont)  ; //construtor que recebe o tipo de territorio
+    Territorio(string tp, int ct, int resis, int prod, int ou, int pont) ;//construtor que recebe o tipo de territorio
     string getNome() const;	// retorna o nome do territorio para ser usado no getAsString
     int getOuro();
     int getProd();

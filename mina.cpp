@@ -7,4 +7,10 @@
 
 int Mina::num = 1;
 
+string Mina::getAsString() const {
+    ostringstream os;
+    os << Territorio::getAsString();
+    return os.str();
+}
+
 

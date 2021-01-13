@@ -1,9 +1,14 @@
 //
-// Created by Merlina Garthe on 18/12/2020.
+// Created by Merlina Garthe on 13/01/2021.
 //
 
 #include "logica.h"
 #include <sstream>
+#include <string>
+#include <cctype>
+
+int Logica::fase=1;
+int Logica::turno=1;
 
 bool Logica::addTerritorio(string tipo, int quant) {
 
@@ -85,6 +90,100 @@ bool Logica::evento() {
 }
 
 bool Logica::eventoforcado(string tipo) {
-   m.eventoforcado(tipo);
+    m.eventoforcado(tipo);
     return true;
+}
+
+string Logica::cadamostra(string nome) {
+    ostringstream os;
+    os << m.cadamostra(nome) << endl;
+    return os.str();
+}
+
+
+bool Logica::avanca() {
+    fase++;
+    cout << "Turno: " << turno << " ,fase " << fase << endl;
+  if(fase<=4)
+  {
+     if(fase==4)
+     {
+         cout << "EVENTO: " << endl;
+         m.evento();
+         turno++;
+         fase=1;
+         comandos.clear();
+     }
+
+  }
+
+}
+    bool Logica::addcomando(string comando) {
+
+        comandos.push_back((comando));
+
+        return true;
+    }
+
+
+    string Logica::mostraCmd() const{
+        ostringstream os;
+        for(int i=0; i< comandos.size() ; i++)
+        {
+            os << comandos[i] << endl;
+        }
+        return os.str();
+    }
+
+    string Logica::getAs1(string comando, string tipo) {
+        ostringstream os;
+        os << comando << " " << tipo;
+        return os.str();
+    }
+
+    string Logica::getAs2(string comando) {
+        ostringstream os;
+        os << comando;
+        return os.str();
+    }
+
+bool Logica::conquista() {
+
+    string comando, tipo;
+    for (int i = 0; i < comandos.size(); i++) {
+        istringstream is(comandos[i]);
+        is >> comando;
+        if (comando == "conquista") {
+            is >> tipo;
+            conquista(tipo);
+            break;
+        } 
+    }
+}
+
+    int Logica::faseq() {
+        return fase;
+    }
+
+    bool Logica::adquire() {
+        string comando, tipo, tipo_2, nome;
+        for (int i = 0; i < comandos.size(); i++) {
+            istringstream is(comandos[i]);
+            is >> comando;
+
+            if (comando == "adquire") {
+                is >> tipo >> tipo_2;
+                nome = getAs1(tipo, tipo_2);
+                m.adquire(nome);
+                break;
+            }
+        }
+    }
+
+    string Logica::aviso_final() {
+        return m.mostraPontos();
+    }
+
+int Logica::getfase() {
+   return fase;
 }

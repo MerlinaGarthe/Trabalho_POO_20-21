@@ -6,5 +6,11 @@
 #include <sstream>
 int Pescaria::num = 1;
 
+string Pescaria::getAsString() const{
+    ostringstream os;
+    os << Territorio::getAsString();
+    return os.str();
+}
+
 
 

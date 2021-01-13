@@ -7,4 +7,10 @@
 
 int Refugios::num = 1;
 
+string Refugios::getAsString() const {
+    ostringstream os;
+    os << Territorio::getAsString();
+    return os.str();
+}
+
 

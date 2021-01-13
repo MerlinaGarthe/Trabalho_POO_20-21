@@ -17,7 +17,7 @@ class Pescaria : public Ilhas
 
 public:
     Pescaria(string tipo = "Pescaria",   int resis = 9, int p = 2,int pon = 2): conta(num++), Ilhas(tipo, num,resis,p,0, pon) {}
-
+    string getAsString() const;
 
 };
 

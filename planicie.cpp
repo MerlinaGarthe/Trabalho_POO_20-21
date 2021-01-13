@@ -7,3 +7,9 @@
 
 int Planicie::num = 1;
 
+string Planicie::getAsString() const {
+    ostringstream os;
+    os << Territorio::getAsString();
+    return os.str();
+}
+

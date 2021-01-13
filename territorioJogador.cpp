@@ -5,6 +5,7 @@
 #include "territorioJogador.h"
 #include "mundo.h"
 #include "territorio.h"
+#include "territorioI.h"
 #include <sstream>
 #include <string>
 
@@ -14,22 +15,24 @@ TerritorioJogador::TerritorioJogador() {
 
      armazemmax = 3;	//quantidade maxima
      cofremax = 3;		//quantidade maxima
-     resistencia = 9;
+   resistencia = 9;
    criacao_p = 0;
    criacao_o =0;
    pontos = 0;
-   forcamilitar =3; //Nivel de forÁa militar, falta fazer o nivel
+   forcamilitar =3; //Nivel de forÁa militar, falta fazer o nivel*/
    limforca=3;
    ouro =0;
     produtos=0;
+
+  //territorios.push_back(new TerritorioI());
 }
 TerritorioJogador::~TerritorioJogador()
 {
-    for(auto c : territorios)
+   /* for(auto c : territorios)
     {
         delete c;
     }
-    territorios.clear();
+    territorios.clear();*/ //só apagar o territorio inicial
 }
 
 int TerritorioJogador::random() {
@@ -45,27 +48,24 @@ void TerritorioJogador::conquista(Territorio &ter) {
 
     int j = forcamilitar + random();   //soma se a força militar mais o tal numero random
 
-    if (ter.getTipo() == "Castelo" || ter.getTipo() == "Duna" || ter.getTipo() == "Fortaleza" ||
-        ter.getTipo() == "Mina" || ter.getTipo() == "Montanha"  ||
-        ter.getTipo() == "Planicie") {
-        if (j >= ter.getResis())  //se a forca militar (já somada) for maior à resitencia do suposto territorio
-        {
+        if ((ter.getTipo() == "Castelo" || ter.getTipo() == "Duna" || ter.getTipo() == "Fortaleza" ||
+             ter.getTipo() == "Mina" || ter.getTipo() == "Montanha" ||
+             ter.getTipo() == "Planicie")) {
+            if (j >= ter.getResis())  //se a forca militar (já somada) for maior à resitencia do suposto territorio
+            {
+                territorios.push_back(&ter);    //metemos apontar para o tal territorio(não se faz o new porque nós não queremos memoria dinamica mas sim oara que este vetor aponte para o objeto do outro)
+                if (ouro < cofremax)
+                    ouro += ter.getOuro();//soma se o ouro e os produtos da conquist
 
-            territorios.push_back(&ter);    //metemos apontar para o tal territorio(não se faz o new porque nós não queremos memoria dinamica mas sim oara que este vetor aponte para o objeto do outro)
-            if (ouro < cofremax)
-
-
-                ouro += ter.getOuro();//soma se o ouro e os produtos da conquist
-
-            if (produtos < armazemmax)
-                produtos += ter.getProd();
+                if (produtos < armazemmax)
+                    produtos += ter.getProd();
 
 
-            pontos += ter.getPontos();
-            cout << aviso() << endl;
-        }
+                pontos += ter.getPontos();
+                cout << aviso() << endl;
+            }
 
-    }else if (ter.getTipo() == "Pescaria" || ter.getTipo() == "Refugios") {
+        } else if ((ter.getTipo() == "Pescaria" || ter.getTipo() == "Refugios") ) {
             if (tam() && encontra()) {
                 if (j >= ter.getResis())  //se a forca militar (já somada) for maior à resitencia do suposto territorio
                 {
@@ -88,10 +88,8 @@ void TerritorioJogador::conquista(Territorio &ter) {
 
                     cout << aviso() << endl;
                 }
-            }
-        else
-            {
-            cout << "Não possui materiais suficientes para conquistar" << endl;
+            } else {
+                cout << "Não possui materiais suficientes para conquistar" << endl;
             }
         } else {
             if (forcamilitar > 0)          // se não conseguir conquistar a força militar diminui
@@ -99,8 +97,9 @@ void TerritorioJogador::conquista(Territorio &ter) {
 
         }
 
-
 }
+
+
 string TerritorioJogador::getAsString() const
 {
     ostringstream os;
@@ -108,8 +107,9 @@ string TerritorioJogador::getAsString() const
     for (int i = 0; i < (int)territorios.size(); i++)	//percorre o vetor
     {
         os << territorios[i]->getNome() << "-> Criacao de ouro: " << ouro << ", Criacao de produtos: " << produtos<< "\n";
-        //os << "Pontos vitoria do Imperio: " << pontos << "\n";
-
+        os << "Pontos vitoria do Imperio: " << pontos << "\n";
+        os << "Resistencia: " << territorios[i]->getResis() << endl;
+        os << "Força militar: " << forcamilitar << endl;
 
     }
     for(int j= 0 ; j < (int)tecno.size();j++)
@@ -124,8 +124,8 @@ string TerritorioJogador::getAsString2() const
 
     for (int i = 0; i < (int)territorios.size(); i++)	//percorre o vetor
     {
-        os << territorios[i]->getNome() << "-> Criacao de ouro: " << ouro << ", Criacao de produtos: " << criacao_p << "\n";
-        os << "Pontos vitoria do Imperio: " << pontos << "\n";
+        os << territorios[i]->getNome();/* << "-> Criacao de ouro: " << ouro << ", Criacao de produtos: " << criacao_p << "\n";*/
+       os << "Pontos vitoria do Imperio: " << pontos << "\n";
         os << "Resistencia ->" << resistencia << " ,ForçaMilitar -> " << forcamilitar << endl;
 
     }
@@ -148,7 +148,8 @@ string TerritorioJogador::getResis() {
 
 void TerritorioJogador::adquire(string tipo) {
 
-    if (tipo == "drones_militar" || tipo == "Drones_Militar") {
+    cout << tipo << endl;
+    if (tipo == "drones militar" || tipo == "DronesMilitar") {
 
 
         if (ouro >= 3) {
@@ -159,25 +160,25 @@ void TerritorioJogador::adquire(string tipo) {
 
         }
 
-    } else if (tipo == "Misseis_Teleguiados" || tipo == "misseis_teleguiados") {
+    } else if (tipo == "Misseis Teleguiados" || tipo == "misseis teleguiados") {
         if (ouro >= 4) {
             ouro -= 4;
             tecno.push_back(new Tecnologias(tipo));
 
         }
-    } else if (tipo == "defesas_territoriais" || tipo == "Defesas_Territoriais") {
+    } else if (tipo == "defesas territoriais" || tipo == "Defesas Territoriais") {
         if (ouro >= 4) {
             resistencia++;
             ouro -= 4;
             tecno.push_back(new Tecnologias(tipo));
 
         }
-    } else if (tipo == "Bolsa_de_Valores" || tipo == "bolsa_de_valores") {
+    } else if (tipo == "Bolsa Valores" || tipo == "bolsa valores") {
         if (ouro >= 2) {
             tecno.push_back(new Tecnologias(tipo));
 
         }
-    } else if (tipo == "Banco_Central" || tipo == "banco_central") {
+    } else if (tipo == "Banco Central" || tipo == "banco central") {
         tecno.push_back(new Tecnologias(tipo));
 
         if (cofremax <= 5 && armazemmax <= 5) {
@@ -241,7 +242,7 @@ bool TerritorioJogador::maismilitar() {
 bool TerritorioJogador::encontra() {
     for(int i =0; i < tecno.size(); i++)
     {
-        if(tecno[i]->getTipo() == "misseis_teleguiados" || tecno[i]->getTipo() == "Misseis_Teleguiados")
+        if(tecno[i]->getTipo() == "misseis teleguiados" || tecno[i]->getTipo() == "Misseis Teleguiados")
             return true;
     }
     return false;
@@ -249,7 +250,7 @@ bool TerritorioJogador::encontra() {
 
 string TerritorioJogador::aviso() const {
     ostringstream os;
-    os << "Conseguiu conquistar este territorio!" << forcamilitar << endl;
+    os << "Conseguiu conquistar este territorio!"  << endl;
     return os.str();
 }
 
@@ -268,34 +269,45 @@ void TerritorioJogador::toma(Territorio &ter) {
 
 void TerritorioJogador::tomatec(string tipo) {
 
-    if (tipo == "drones_militar" || tipo == "Drones_Militar") {
+    if (tipo == "drones militar" || tipo == "Drones Militar") {
             tecno.push_back(new Tecnologias(tipo));
 
-    } else if (tipo == "Misseis_Teleguiados" || tipo == "misseis_teleguiados") {
+    } else if (tipo == "Misseis Teleguiados" || tipo == "misseis teleguiados") {
             tecno.push_back(new Tecnologias(tipo));
 
-    } else if (tipo == "defesas_territoriais" || tipo == "Defesas_Territoriais") {
-
-            tecno.push_back(new Tecnologias(tipo));
-
-
-    } else if (tipo == "Bolsa_de_Valores" || tipo == "bolsa_de_valores") {
+    } else if (tipo == "defesas territoriais" || tipo == "Defesas Territoriais") {
 
             tecno.push_back(new Tecnologias(tipo));
 
-    } else if (tipo == "Banco_Central" || tipo == "banco_central") {
+
+    } else if (tipo == "Bolsa de Valores" || tipo == "bolsa de valores") {
+
+            tecno.push_back(new Tecnologias(tipo));
+
+    } else if (tipo == "Banco Central" || tipo == "banco central") {
         tecno.push_back(new Tecnologias(tipo));
 
     }
 }
 
 bool TerritorioJogador::mudaOuro(int quant) {
-    ouro = quant;
+
+
+
+    if(quant > cofremax)
+    {   quant = cofremax;
+        ouro = quant; }
+    else
+        ouro=quant;
     return true;
 }
 
 bool TerritorioJogador::mudaProd(int quant) {
-    produtos=quant;
+    if(quant > armazemmax)
+    {   quant=armazemmax;
+        produtos=quant;}
+    else
+        produtos=quant;
     return true;
 }
 
@@ -309,7 +321,6 @@ int TerritorioJogador::randomevento() {
 void TerritorioJogador::evento() {
     int j;
     j = randomevento();
-    cout << j << endl;
 
     if(j==1)
     {
@@ -321,7 +332,7 @@ void TerritorioJogador::evento() {
 
     }
     else if(j==2)
-    {
+    {/*
         cout << "Calhou a Invasão" << endl;
         int k;
         k = randomsorte() + 2; // 2 no primeiro ano e 3 no segundo
@@ -332,7 +343,7 @@ void TerritorioJogador::evento() {
                 territorios.pop_back();
 
                 for (int i = 0; i < tecno.size(); i++) {
-                    if (tecno[i]->getTipo() == "defesas_territoriais" || tipo == "Defesas_Territoriais") {
+                    if (tecno[i]->getTipo() == "defesas territoriais" || tipo == "Defesas Territoriais") {
                         resistencia += 1;
                     }
                 }
@@ -345,10 +356,10 @@ void TerritorioJogador::evento() {
                 //Um ponto adicional por cada tecnologia adquirida;
                 //Um ponto adicional caso tenham sido adquiridas 5 tecnologias (bónus científico);
                 //Três pontos adicionais se todos os terrenos do mundo fizerem parte do império (é o bónus “imperador supremo”).
-
-                exit;
+                cout << aviso_final() << endl;
+               exit;
             }
-        }
+        }*/
 
     }
     else if( j == 3)
@@ -375,7 +386,7 @@ int TerritorioJogador::randomsorte() {
 
 void TerritorioJogador::eventoforcado(string tipo) {
 
-        if(tipo == "Recurso_Abandonado")
+        if(tipo == "Recurso Abandonado")
         {
             cout << "Calhou o Recurso Abandonado" << endl;
 
@@ -396,7 +407,7 @@ void TerritorioJogador::eventoforcado(string tipo) {
                     territorios.pop_back();
 
                     for (int i = 0; i < tecno.size(); i++) {
-                        if (tecno[i]->getTipo() == "defesas_territoriais" || tipo == "Defesas_Territoriais") {
+                        if (tecno[i]->getTipo() == "defesas territoriais" || tipo == "Defesas Territoriais") {
                             resistencia += 1;
                         }
                     }
@@ -409,25 +420,54 @@ void TerritorioJogador::eventoforcado(string tipo) {
                     //Um ponto adicional por cada tecnologia adquirida;
                     //Um ponto adicional caso tenham sido adquiridas 5 tecnologias (bónus científico);
                     //Três pontos adicionais se todos os terrenos do mundo fizerem parte do império (é o bónus “imperador supremo”).
-
+                     cout << aviso_final();
                     exit;
                 }
             }
 
         }
-        else if( tipo == "Aliança_Diplomática")
+        else if( tipo == "Aliança Diplomática")
         {
             cout << "Calhou Aliança Diplomática" << endl;
 
             if(forcamilitar < limforca)
             {
                 forcamilitar+=1;
+
             }
 
         }
-        else if(tipo == "Sem_Evento")
+        else if(tipo == "Sem Evento")
         {
             cout << "Não irá ocorrer nenhum evento" << endl;
         }
 
 }
+
+bool TerritorioJogador::verifica(Territorio &ter) {
+   for(int i=0; i< (int)territorios.size() ; i++)
+    {
+
+        if(territorios[i]->getNome()!=ter.getNome())
+       {
+
+            return true;
+       }
+   }
+    return false;
+}
+
+string TerritorioJogador::aviso_final()  {
+    ostringstream os;
+
+    pontos+=tecno.size();
+    if(tecno.size()>5)
+        pontos++;
+    os << "PONTOS QUE OBTEU: " << pontos ;
+    return os.str();
+}
+
+
+
+
+

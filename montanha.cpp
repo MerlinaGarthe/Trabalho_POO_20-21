@@ -7,4 +7,10 @@
 
 int Montanha::num = 1;
 
+string Montanha::getAsString() const {
+    ostringstream os;
+    os << Territorio::getAsString();
+    return os.str();
+}
+
 

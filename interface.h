@@ -11,6 +11,11 @@ using namespace std;
 class Interface
 {
     Logica logica;
+    string cmd;
+    string tipo;
+    int turno;
+    static int fase;
+    static int flag;
 public:
     Interface() {}
     void comandosi();

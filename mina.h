@@ -18,7 +18,7 @@ class Mina : public Continente
 
 public:
     Mina(string tipo= "Mina",   int resistencia = 5,int criacao_o = 0,int pontos = 1): conta(num++), Continente(tipo,num ,resistencia,0, criacao_o, pontos) {}
-    string getAsStringM() const;
+    string getAsString() const;
 };
 
 #endif

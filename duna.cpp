@@ -7,5 +7,11 @@
 
 int Duna::num = 1;
 
+string Duna::getAsString() const {
+    ostringstream os;
+    os << Territorio::getAsString();
+    return os.str();
+}
+
 
 

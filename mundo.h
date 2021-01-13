@@ -8,13 +8,13 @@
 #include <vector>
 #include "territorio.h"
 #include "territorioJogador.h"
-
+#include "territorioI.h"
 using namespace std;
 
 class Mundo {
     vector<Territorio *> te;    //vetor onde se vai guardar os territorios existentes no mundo
     TerritorioJogador tj;
-
+    int turno;
 
 public:
     Mundo() {}
@@ -36,6 +36,8 @@ public:
     bool mudaProd(int quantidade);
     void evento();
     void eventoforcado(string tipo);
+    string cadamostra(string nome);
+    string mostraPontos();
 };
 
 #endif

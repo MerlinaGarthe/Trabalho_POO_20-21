@@ -17,7 +17,7 @@ class Planicie : public Continente
 
 public:
     Planicie(string tipo = "planicie",   int resistencia = 5,int criacao_p = 0,int criacao_o = 0,int pontos = 1): conta(num++), Continente(tipo, num,resistencia,criacao_p, criacao_o, pontos) {}
-    string getAsStringP() const;
+    string getAsString() const;
 };
 
 #endif // !1

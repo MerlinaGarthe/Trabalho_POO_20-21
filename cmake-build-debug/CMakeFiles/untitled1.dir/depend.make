@@ -30,6 +30,7 @@ CMakeFiles/untitled1.dir/interface.cpp.o: ../logica.h
 CMakeFiles/untitled1.dir/interface.cpp.o: ../mundo.h
 CMakeFiles/untitled1.dir/interface.cpp.o: ../tecnologias.h
 CMakeFiles/untitled1.dir/interface.cpp.o: ../territorio.h
+CMakeFiles/untitled1.dir/interface.cpp.o: ../territorioI.h
 CMakeFiles/untitled1.dir/interface.cpp.o: ../territorioJogador.h
 
 CMakeFiles/untitled1.dir/logica.cpp.o: ../logica.cpp
@@ -37,6 +38,7 @@ CMakeFiles/untitled1.dir/logica.cpp.o: ../logica.h
 CMakeFiles/untitled1.dir/logica.cpp.o: ../mundo.h
 CMakeFiles/untitled1.dir/logica.cpp.o: ../tecnologias.h
 CMakeFiles/untitled1.dir/logica.cpp.o: ../territorio.h
+CMakeFiles/untitled1.dir/logica.cpp.o: ../territorioI.h
 CMakeFiles/untitled1.dir/logica.cpp.o: ../territorioJogador.h
 
 CMakeFiles/untitled1.dir/main.cpp.o: ../interface.h
@@ -45,6 +47,7 @@ CMakeFiles/untitled1.dir/main.cpp.o: ../main.cpp
 CMakeFiles/untitled1.dir/main.cpp.o: ../mundo.h
 CMakeFiles/untitled1.dir/main.cpp.o: ../tecnologias.h
 CMakeFiles/untitled1.dir/main.cpp.o: ../territorio.h
+CMakeFiles/untitled1.dir/main.cpp.o: ../territorioI.h
 CMakeFiles/untitled1.dir/main.cpp.o: ../territorioJogador.h
 
 CMakeFiles/untitled1.dir/mina.cpp.o: ../continente.h
@@ -71,6 +74,7 @@ CMakeFiles/untitled1.dir/mundo.cpp.o: ../planicie.h
 CMakeFiles/untitled1.dir/mundo.cpp.o: ../refugios.h
 CMakeFiles/untitled1.dir/mundo.cpp.o: ../tecnologias.h
 CMakeFiles/untitled1.dir/mundo.cpp.o: ../territorio.h
+CMakeFiles/untitled1.dir/mundo.cpp.o: ../territorioI.h
 CMakeFiles/untitled1.dir/mundo.cpp.o: ../territorioJogador.h
 
 CMakeFiles/untitled1.dir/pescaria.cpp.o: ../ilhas.h
@@ -94,12 +98,14 @@ CMakeFiles/untitled1.dir/tecnologias.cpp.o: ../tecnologias.h
 CMakeFiles/untitled1.dir/territorio.cpp.o: ../territorio.cpp
 CMakeFiles/untitled1.dir/territorio.cpp.o: ../territorio.h
 
+CMakeFiles/untitled1.dir/territorioI.cpp.o: ../territorio.h
 CMakeFiles/untitled1.dir/territorioI.cpp.o: ../territorioI.cpp
 CMakeFiles/untitled1.dir/territorioI.cpp.o: ../territorioI.h
 
 CMakeFiles/untitled1.dir/territorioJogador.cpp.o: ../mundo.h
 CMakeFiles/untitled1.dir/territorioJogador.cpp.o: ../tecnologias.h
 CMakeFiles/untitled1.dir/territorioJogador.cpp.o: ../territorio.h
+CMakeFiles/untitled1.dir/territorioJogador.cpp.o: ../territorioI.h
 CMakeFiles/untitled1.dir/territorioJogador.cpp.o: ../territorioJogador.cpp
 CMakeFiles/untitled1.dir/territorioJogador.cpp.o: ../territorioJogador.h
 

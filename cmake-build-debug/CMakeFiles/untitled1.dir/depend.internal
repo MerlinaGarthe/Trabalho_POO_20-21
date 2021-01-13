@@ -31,6 +31,7 @@ CMakeFiles/untitled1.dir/interface.cpp.o
  /Users/merlinagarthe/CLionProjects/trabalho/mundo.h
  /Users/merlinagarthe/CLionProjects/trabalho/tecnologias.h
  /Users/merlinagarthe/CLionProjects/trabalho/territorio.h
+ /Users/merlinagarthe/CLionProjects/trabalho/territorioI.h
  /Users/merlinagarthe/CLionProjects/trabalho/territorioJogador.h
 CMakeFiles/untitled1.dir/logica.cpp.o
  /Users/merlinagarthe/CLionProjects/trabalho/logica.cpp
@@ -38,6 +39,7 @@ CMakeFiles/untitled1.dir/logica.cpp.o
  /Users/merlinagarthe/CLionProjects/trabalho/mundo.h
  /Users/merlinagarthe/CLionProjects/trabalho/tecnologias.h
  /Users/merlinagarthe/CLionProjects/trabalho/territorio.h
+ /Users/merlinagarthe/CLionProjects/trabalho/territorioI.h
  /Users/merlinagarthe/CLionProjects/trabalho/territorioJogador.h
 CMakeFiles/untitled1.dir/main.cpp.o
  /Users/merlinagarthe/CLionProjects/trabalho/interface.h
@@ -46,6 +48,7 @@ CMakeFiles/untitled1.dir/main.cpp.o
  /Users/merlinagarthe/CLionProjects/trabalho/mundo.h
  /Users/merlinagarthe/CLionProjects/trabalho/tecnologias.h
  /Users/merlinagarthe/CLionProjects/trabalho/territorio.h
+ /Users/merlinagarthe/CLionProjects/trabalho/territorioI.h
  /Users/merlinagarthe/CLionProjects/trabalho/territorioJogador.h
 CMakeFiles/untitled1.dir/mina.cpp.o
  /Users/merlinagarthe/CLionProjects/trabalho/continente.h
@@ -72,6 +75,7 @@ CMakeFiles/untitled1.dir/mundo.cpp.o
  /Users/merlinagarthe/CLionProjects/trabalho/refugios.h
  /Users/merlinagarthe/CLionProjects/trabalho/tecnologias.h
  /Users/merlinagarthe/CLionProjects/trabalho/territorio.h
+ /Users/merlinagarthe/CLionProjects/trabalho/territorioI.h
  /Users/merlinagarthe/CLionProjects/trabalho/territorioJogador.h
 CMakeFiles/untitled1.dir/pescaria.cpp.o
  /Users/merlinagarthe/CLionProjects/trabalho/ilhas.h
@@ -95,11 +99,13 @@ CMakeFiles/untitled1.dir/territorio.cpp.o
  /Users/merlinagarthe/CLionProjects/trabalho/territorio.cpp
  /Users/merlinagarthe/CLionProjects/trabalho/territorio.h
 CMakeFiles/untitled1.dir/territorioI.cpp.o
+ /Users/merlinagarthe/CLionProjects/trabalho/territorio.h
  /Users/merlinagarthe/CLionProjects/trabalho/territorioI.cpp
  /Users/merlinagarthe/CLionProjects/trabalho/territorioI.h
 CMakeFiles/untitled1.dir/territorioJogador.cpp.o
  /Users/merlinagarthe/CLionProjects/trabalho/mundo.h
  /Users/merlinagarthe/CLionProjects/trabalho/tecnologias.h
  /Users/merlinagarthe/CLionProjects/trabalho/territorio.h
+ /Users/merlinagarthe/CLionProjects/trabalho/territorioI.h
  /Users/merlinagarthe/CLionProjects/trabalho/territorioJogador.cpp
  /Users/merlinagarthe/CLionProjects/trabalho/territorioJogador.h

@@ -15,7 +15,7 @@
 #include "refugios.h"
 #include <sstream>
 #include <string>
-
+#include "territorioI.h"
 Mundo::~Mundo()
 {
     for(auto c : te)
@@ -28,7 +28,6 @@ Mundo::~Mundo()
 
 bool Mundo::addTerritorio(string tipo, int quantidade)
 {
-
     //if (tipo == "castelo" || tipo == "duna" || tipo == "fortaleza" || tipo == "mina" || tipo == "montanha" || tipo == "pescaria" || tipo == "planicie" || tipo == "refugios") {
         if(tipo == "castelo" || tipo == "Castelo") {
             for (int i = 0; i < quantidade; i++) {
@@ -115,7 +114,7 @@ string Mundo::imprimeTerritoriosJogador()
 }
 string Mundo :: imprimeTudo()
 {
-    return tj.getAsString2();
+    return tj.getAsString();
 }
 bool Mundo::conquista(string nome) //aqui só vou ver se o territorio que quero existe
 {
@@ -125,8 +124,9 @@ bool Mundo::conquista(string nome) //aqui só vou ver se o territorio que quero 
 
         if (te[i]->getNome()==nome )
         {
+            tj.conquista(*te[i]);   // se sim envio esse territorio para este funçã
+            tj.verifica(*te[i]);
 
-            tj.conquista(*te[i]);   // se sim envio esse territorio para este função
         }
 
     }
@@ -135,7 +135,9 @@ bool Mundo::conquista(string nome) //aqui só vou ver se o territorio que quero 
 }
 
 void Mundo::adquire(string tipo)  {
+
     return tj.adquire(tipo);
+
 }
 
 bool Mundo::ouro() {
@@ -192,6 +194,27 @@ void Mundo::evento() {
 void Mundo::eventoforcado(string tipo) {
     return tj.eventoforcado(tipo);
 }
+
+string Mundo::cadamostra(string nome) {
+    ostringstream os;
+    for(int i=0; i< te.size(); i++)
+    {
+        if(te[i]->getNome() == nome)
+        {
+            os << te[i]->getAsString() << endl;
+        }
+    }
+    return os.str();
+}
+
+string Mundo::mostraPontos() {
+    return tj.aviso_final();
+}
+
+
+
+
+
 
 
 

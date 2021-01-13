@@ -16,7 +16,7 @@ class Refugios : public Ilhas
 
 public:
     Refugios(string tipo = "planicie",   int resistencia = 9,int criacao_o = 1,int pontos = 2): conta(num++), Ilhas(tipo,num,resistencia,0, criacao_o, pontos) {}
-    string getAsStringP() const;
+    string getAsString() const;
 };
 
 #endif
