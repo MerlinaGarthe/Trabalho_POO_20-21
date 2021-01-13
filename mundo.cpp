@@ -211,6 +211,11 @@ string Mundo::mostraPontos() {
     return tj.aviso_final();
 }
 
+bool Mundo::recolha(int f) {
+    tj.recolha(f);
+    return true;
+}
+
 
 
 

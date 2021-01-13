@@ -102,21 +102,33 @@ string Logica::cadamostra(string nome) {
 
 
 bool Logica::avanca() {
-    fase++;
-    cout << "Turno: " << turno << " ,fase " << fase << endl;
-  if(fase<=4)
-  {
-     if(fase==4)
-     {
-         cout << "EVENTO: " << endl;
-         m.evento();
-         turno++;
-         fase=1;
-         comandos.clear();
-     }
+    if(turno!=12) {
+        fase++;
+        if(turno<=6)
+            cout <<"ANO 1, turno: " << turno << " ,fase " << fase << endl;
+        else
+            cout << "ANO 2, turno: "<< turno << " ,fase " << fase << endl;
 
-  }
+        if (fase <= 4) {
+            if (fase == 4) {
+                cout << "EVENTO: " << endl;
+                m.evento();
+                turno++;
+                fase = 1;
+                comandos.clear();
+            }
+            if(fase==2)
+            {
+                cout << "Recolha de bens! " << endl;
+                m.recolha(turno);
+                fase++;
+            }
 
+        }
+    }
+    else
+    { cout << aviso_final() << endl;exit(0);
+       }
 }
     bool Logica::addcomando(string comando) {
 
@@ -157,7 +169,7 @@ bool Logica::conquista() {
             is >> tipo;
             conquista(tipo);
             break;
-        } 
+        }
     }
 }
 

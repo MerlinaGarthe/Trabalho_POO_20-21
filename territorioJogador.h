@@ -57,6 +57,7 @@ public:
    void eventoforcado(string tipo);
     bool verifica (Territorio &ter);
     string aviso_final();
+    void recolha(int f);
 };
 
 #endif

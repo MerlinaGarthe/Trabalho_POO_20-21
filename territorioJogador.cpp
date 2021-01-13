@@ -332,8 +332,8 @@ void TerritorioJogador::evento() {
 
     }
     else if(j==2)
-    {/*
-        cout << "Calhou a Invasão" << endl;
+    {
+      /* cout << "Calhou a Invasão" << endl;
         int k;
         k = randomsorte() + 2; // 2 no primeiro ano e 3 no segundo
 
@@ -357,10 +357,10 @@ void TerritorioJogador::evento() {
                 //Um ponto adicional caso tenham sido adquiridas 5 tecnologias (bónus científico);
                 //Três pontos adicionais se todos os terrenos do mundo fizerem parte do império (é o bónus “imperador supremo”).
                 cout << aviso_final() << endl;
-               exit;
-            }
-        }*/
 
+            }
+        }
+*/
     }
     else if( j == 3)
     {
@@ -395,37 +395,37 @@ void TerritorioJogador::eventoforcado(string tipo) {
             }
 
         }
-        else if(tipo == "Invasão")
-        {
-            cout << "Calhou a Invasão" << endl;
-            int k;
-            k = randomsorte() + 2; // 2 no primeiro ano e 3 no segundo
+    /* else if(tipo == "Invasão")
+     {/*
+       cout << "Calhou a Invasão" << endl;
+         int k;
+         k = randomsorte() + 2; // 2 no primeiro ano e 3 no segundo
 
-            if( k > territorios.back()->getResis())
-            {
-                if(territorios.size()>=1) {
-                    territorios.pop_back();
+         if( k > territorios.back()->getResis())
+         {
+             if(territorios.size()>=1) {
+                 territorios.pop_back();
 
-                    for (int i = 0; i < tecno.size(); i++) {
-                        if (tecno[i]->getTipo() == "defesas territoriais" || tipo == "Defesas Territoriais") {
-                            resistencia += 1;
-                        }
-                    }
-                }
-                else
-                {
-                    cout << "VOCE PERDEU IHIHI" << endl;
-                    //falta aqui mostrar aquelas cenad do fim do jogo
-                    //O somatório dos pontos de vitória correspondentes aos territórios que integram o seu império;
-                    //Um ponto adicional por cada tecnologia adquirida;
-                    //Um ponto adicional caso tenham sido adquiridas 5 tecnologias (bónus científico);
-                    //Três pontos adicionais se todos os terrenos do mundo fizerem parte do império (é o bónus “imperador supremo”).
-                     cout << aviso_final();
-                    exit;
-                }
-            }
+                 for (int i = 0; i < tecno.size(); i++) {
+                     if (tecno[i]->getTipo() == "defesas territoriais" || tipo == "Defesas Territoriais") {
+                         resistencia += 1;
+                     }
+                 }
+             }
+             else
+             {
+                 cout << "VOCE PERDEU IHIHI" << endl;
+                 //falta aqui mostrar aquelas cenad do fim do jogo
+                 //O somatório dos pontos de vitória correspondentes aos territórios que integram o seu império;
+                 //Um ponto adicional por cada tecnologia adquirida;
+                 //Um ponto adicional caso tenham sido adquiridas 5 tecnologias (bónus científico);
+                 //Três pontos adicionais se todos os terrenos do mundo fizerem parte do império (é o bónus “imperador supremo”).
+                  cout << aviso_final();
 
-        }
+             }
+         }
+
+        }*/
         else if( tipo == "Aliança Diplomática")
         {
             cout << "Calhou Aliança Diplomática" << endl;
@@ -465,6 +465,87 @@ string TerritorioJogador::aviso_final()  {
         pontos++;
     os << "PONTOS QUE OBTEU: " << pontos ;
     return os.str();
+}
+
+void TerritorioJogador::recolha(int f) {
+        for(int i=0; i< territorios.size(); i++)
+        {
+            if(territorios[i]->getTipo()=="Castelo")
+            {
+                if(f <=2 || (f>=7 && f <=8))
+                {
+                    if(ouro<cofremax)
+                        ouro+=3;
+                }
+                else
+                    ouro++;
+
+            }
+            if(territorios[i]->getTipo()=="planicie")
+            {
+                if(f<=6) {
+                    if (ouro < cofremax) {
+                        ouro++;
+                    }
+                    if (produtos < armazemmax)
+                        produtos++;
+                }
+                else if(f>6)
+                {
+                    if (ouro < cofremax) {
+                        ouro++;
+                    }
+                    if (produtos < armazemmax)
+                        produtos=+2;
+                }
+            }
+            if(territorios[i]->getTipo()=="Montanha")
+            {
+
+                if(f>=3)
+                {
+                    if (produtos < armazemmax)
+                        produtos++;
+                }
+            }
+            if(territorios[i]->getTipo()=="Mina") {
+
+                if (f <= 3 || (f >= 7 && f <= 9)) {
+                    if (ouro < cofremax)
+                        ouro++;
+                } else if ((f > 3 && f <= 6) || (f > 9 && f <= 12)) {
+                    if (ouro < cofremax)
+                        ouro = +3;
+                }
+            }
+            if(territorios[i]->getTipo()=="Duna") {
+
+                if (produtos < armazemmax)
+                    produtos++;
+
+            }
+            if(territorios[i]->getTipo()=="Refugios")
+            {
+
+                if (ouro < cofremax)
+                    ouro++;
+
+           }
+            if(territorios[i]->getTipo()=="Pescaria")
+            {
+
+                if(f<=6) {
+                    if (produtos < armazemmax)
+                        produtos+=2;
+                }
+                else if(f>6)
+                {
+                    if (produtos < armazemmax)
+                        produtos+=2;
+                }
+
+            }
+       }
 }
 
 

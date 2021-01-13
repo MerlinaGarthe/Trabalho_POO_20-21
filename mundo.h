@@ -38,6 +38,7 @@ public:
     void eventoforcado(string tipo);
     string cadamostra(string nome);
     string mostraPontos();
+    bool recolha(int f);
 };
 
 #endif
