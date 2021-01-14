@@ -7,7 +7,7 @@
 #include <string>
 #include <cctype>
 
-int Logica::fase=1;
+int Logica::fase=0;
 int Logica::turno=1;
 
 bool Logica::addTerritorio(string tipo, int quant) {
@@ -32,11 +32,8 @@ bool Logica::conquista(string tipo) {
 
 }
 
-string Logica ::lista()  {
-    ostringstream os;
-    os << m.imprimeTudo() << endl;
-    return os.str();
-}
+
+
 
 bool Logica::adquire(string tipo) {
     m.adquire(tipo);
@@ -104,14 +101,9 @@ string Logica::cadamostra(string nome) {
 bool Logica::avanca() {
     if(turno!=12) {
         fase++;
-        if(turno<=6)
-            cout <<"ANO 1, turno: " << turno << " ,fase " << fase << endl;
-        else
-            cout << "ANO 2, turno: "<< turno << " ,fase " << fase << endl;
 
         if (fase <= 4) {
             if (fase == 4) {
-                cout << "EVENTO: " << endl;
                 m.evento();
                 turno++;
                 fase = 1;
@@ -119,16 +111,14 @@ bool Logica::avanca() {
             }
             if(fase==2)
             {
-                cout << "Recolha de bens! " << endl;
+
                 m.recolha(turno);
-                fase++;
+
             }
 
         }
     }
-    else
-    { cout << aviso_final() << endl;exit(0);
-       }
+
 }
     bool Logica::addcomando(string comando) {
 
@@ -199,3 +189,49 @@ bool Logica::conquista() {
 int Logica::getfase() {
    return fase;
 }
+
+int Logica::getTurno() {
+    return turno;
+}
+
+bool Logica::trocabola(int num) {
+    m.trocabolsa(num);
+    return true;
+}
+
+bool Logica::verificabolsa() {
+    m.bolsa();
+    return true;
+}
+
+string Logica::mundoresta() {
+    ostringstream os;
+    os << m.mundoso() << endl;
+    return os.str();
+}
+
+string Logica::fimturno() {
+    ostringstream os;
+    if(getTurno()<=6)
+        os << "Ano 1, turno " << getTurno() << endl;
+    else if(getTurno()>6)
+        os << "Ano 2, turno " << getTurno() << endl;
+    os << "Os seus territorios:\n" << m.imprimeTerritoriosJogador() << endl;
+    os << "Territorios restantes no mundo:\n " << m.mundoso() << endl;
+    os << "Dados: \n" << m.juntos() ;
+    os << tecnologias() << endl;
+    return os.str();
+}
+
+string Logica::tecnologias() {
+   ostringstream os;
+   os << "Tecnologias disponiveis para compra: " << endl;
+   os << "-> Drones Militares (o limite da força militar passa a 5): preço 3 unidades de ouro" << endl;
+   os << "-> Misseis Teleguiados (tecnologia necessária para conquistar ilhas): preço 4 unidades de ouro"<< endl;
+   os << "-> Defesas Territoriais (equipamento especial de defesa que acrescenta 1 unidade à resitência): preco 4 unidades de ouro" << endl;
+   os << "-> Bolsa Valores (sistema comercial que torna possíveis as trocas entre produtos e ouro): preço 2 unidades de ouro" << endl;
+   os << "-> Banco Central (ao ser adquirida, esta tecnologia permite aumentar em duas unidades a capacidade de armazenamento do armazém e do cofre do império: passam poder armazenar até 5 de produtos e 5 unidades de ouro):" << endl;
+    return os.str();
+}
+
+

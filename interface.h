@@ -16,6 +16,8 @@ class Interface
     int turno;
     static int fase;
     static int flag;
+    static int flag2;
+    static int flag3;
 public:
     Interface() {}
     void comandosi();

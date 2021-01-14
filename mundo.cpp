@@ -93,9 +93,8 @@ bool Mundo::addTerritorio(string tipo, int quantidade)
 
 
 }
-string  Mundo::imprimeMeu() {
-    return tj.getForcaMil();
-}
+
+
 string Mundo::getAsString() const
 {
     ostringstream os;
@@ -112,10 +111,8 @@ string Mundo::imprimeTerritoriosJogador()
    return tj.getAsString();
 
 }
-string Mundo :: imprimeTudo()
-{
-    return tj.getAsString();
-}
+
+
 bool Mundo::conquista(string nome) //aqui só vou ver se o territorio que quero existe
 {
 
@@ -134,10 +131,10 @@ bool Mundo::conquista(string nome) //aqui só vou ver se o territorio que quero 
     return true;
 }
 
-void Mundo::adquire(string tipo)  {
+bool Mundo::adquire(string tipo)  {
 
-    return tj.adquire(tipo);
-
+   tj.adquire(tipo);
+    return true;
 }
 
 bool Mundo::ouro() {
@@ -214,6 +211,34 @@ string Mundo::mostraPontos() {
 bool Mundo::recolha(int f) {
     tj.recolha(f);
     return true;
+}
+
+bool Mundo::bolsa() {
+    if(tj.verificaBolsa())
+        return true;
+    else
+        return false;
+}
+
+bool Mundo::trocabolsa(int m) {
+    tj.trocabols(m);
+        return true;
+}
+
+string Mundo::mundoso() {
+    ostringstream os;
+    for(int i=0; i<te.size(); i++)
+    {
+        if(tj.verifica(*te[i]))
+            os << "Nome :" << te[i]->getNome() << " Resistencia:" << te[i]->getResis() <<endl;
+    }
+    return os.str();
+}
+
+string Mundo::juntos() {
+    ostringstream os;
+    os << tj.stringjuntas() << endl;
+    return os.str();
 }
 
 

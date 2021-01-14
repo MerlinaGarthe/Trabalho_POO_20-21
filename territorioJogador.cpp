@@ -1,3 +1,4 @@
+#include <climits>
 //
 // Created by Merlina Garthe on 01/12/2020.
 //
@@ -62,7 +63,7 @@ void TerritorioJogador::conquista(Territorio &ter) {
 
 
                 pontos += ter.getPontos();
-                cout << aviso() << endl;
+
             }
 
         } else if ((ter.getTipo() == "Pescaria" || ter.getTipo() == "Refugios") ) {
@@ -70,10 +71,8 @@ void TerritorioJogador::conquista(Territorio &ter) {
                 if (j >= ter.getResis())  //se a forca militar (já somada) for maior à resitencia do suposto territorio
                 {
 
-                    territorios.push_back(
-                            &ter);    //metemos apontar para o tal territorio(não se faz o new porque nós não queremos memoria dinamica mas sim oara que este vetor aponte para o objeto do outro)
+                    territorios.push_back(&ter);    //metemos apontar para o tal territorio(não se faz o new porque nós não queremos memoria dinamica mas sim oara que este vetor aponte para o objeto do outro)
                     if (ouro < cofremax)
-
 
                         ouro += ter.getOuro();//soma se o ouro e os produtos da conquist
 
@@ -86,10 +85,8 @@ void TerritorioJogador::conquista(Territorio &ter) {
                     }
 
 
-                    cout << aviso() << endl;
+
                 }
-            } else {
-                cout << "Não possui materiais suficientes para conquistar" << endl;
             }
         } else {
             if (forcamilitar > 0)          // se não conseguir conquistar a força militar diminui
@@ -118,19 +115,8 @@ string TerritorioJogador::getAsString() const
     }
     return os.str();
 }
-string TerritorioJogador::getAsString2() const
-{
-    ostringstream os;
 
-    for (int i = 0; i < (int)territorios.size(); i++)	//percorre o vetor
-    {
-        os << territorios[i]->getNome();/* << "-> Criacao de ouro: " << ouro << ", Criacao de produtos: " << criacao_p << "\n";*/
-       os << "Pontos vitoria do Imperio: " << pontos << "\n";
-        os << "Resistencia ->" << resistencia << " ,ForçaMilitar -> " << forcamilitar << endl;
 
-    }
-    return os.str();
-}
 string TerritorioJogador::getForcaMil() {
 
 
@@ -146,9 +132,8 @@ string TerritorioJogador::getResis() {
     return os.str();
 }
 
-void TerritorioJogador::adquire(string tipo) {
+bool TerritorioJogador::adquire(string tipo) {
 
-    cout << tipo << endl;
     if (tipo == "drones militar" || tipo == "DronesMilitar") {
 
 
@@ -188,7 +173,7 @@ void TerritorioJogador::adquire(string tipo) {
 
 
     }
-
+    return true;
 }
 
 
@@ -196,47 +181,43 @@ void TerritorioJogador::adquire(string tipo) {
 
 bool TerritorioJogador::maisOuro() {
 
-
-        if (produtos >= 2)
-        {
-            if (ouro != cofremax) { // o max é 3 logo se tivemos no max nao incrementa
-                ouro++;
+        if(cofremax!=ouro && produtos>=2) {
+                    ouro++;
+                    produtos -= 2;
+                    return true;
             }
-            produtos -= 2;
-            return true;
-        }
-        return false;
+    else
+            return false;
 
 }
 
 bool TerritorioJogador::maisproduto() {
-    if (ouro >= 2)
-    {
-        if (produtos != armazemmax)
-        {
+    if (produtos != armazemmax) {
+        if (ouro >= 2) {
+
             produtos++;
+
+            ouro -= 2;
+
         }
-        ouro -= 2;
-        return true;
     }
-    return false;
+    return true;
 }
 
-int TerritorioJogador::getOuro() {
+ int TerritorioJogador::getOuro() {
     return ouro;
 }
 
 bool TerritorioJogador::maismilitar() {
 
-        if (forcamilitar != limforca)
+        if(ouro >0 && produtos>0 && forcamilitar != limforca)
         {
             forcamilitar++;
-        }
-        ouro --;
-        produtos--;
-        return true;
+            ouro --;
+            produtos--;
 
-    return false;
+        }
+    return true;
 }
 
 bool TerritorioJogador::encontra() {
@@ -269,26 +250,27 @@ void TerritorioJogador::toma(Territorio &ter) {
 
 void TerritorioJogador::tomatec(string tipo) {
 
-    if (tipo == "drones militar" || tipo == "Drones Militar") {
-            tecno.push_back(new Tecnologias(tipo));
+            if ((tipo == "drones militar" || tipo == "Drones Militar") ) {
+                tecno.push_back(new Tecnologias(tipo));
 
-    } else if (tipo == "Misseis Teleguiados" || tipo == "misseis teleguiados") {
-            tecno.push_back(new Tecnologias(tipo));
+            } else if ((tipo == "Misseis Teleguiados" || tipo == "misseis teleguiados")) {
+                tecno.push_back(new Tecnologias(tipo));
 
-    } else if (tipo == "defesas territoriais" || tipo == "Defesas Territoriais") {
+            } else if ((tipo == "defesas territoriais" || tipo == "Defesas Territoriais")) {
 
-            tecno.push_back(new Tecnologias(tipo));
+                tecno.push_back(new Tecnologias(tipo));
 
 
-    } else if (tipo == "Bolsa de Valores" || tipo == "bolsa de valores") {
+            } else if ((tipo == "Bolsa Valores" || tipo == "bolsa valores") ) {
 
-            tecno.push_back(new Tecnologias(tipo));
+                tecno.push_back(new Tecnologias(tipo));
 
-    } else if (tipo == "Banco Central" || tipo == "banco central") {
-        tecno.push_back(new Tecnologias(tipo));
+            } else if ((tipo == "Banco Central" || tipo == "banco central")) {
+                tecno.push_back(new Tecnologias(tipo));
 
-    }
-}
+            }
+        }
+
 
 bool TerritorioJogador::mudaOuro(int quant) {
 
@@ -333,13 +315,13 @@ void TerritorioJogador::evento() {
     }
     else if(j==2)
     {
-      /* cout << "Calhou a Invasão" << endl;
+       cout << "Calhou a Invasão" << endl;
         int k;
         k = randomsorte() + 2; // 2 no primeiro ano e 3 no segundo
-
+        if(territorios.size()>=1) {
         if( k > territorios.back()->getResis())
         {
-            if(territorios.size()>=1) {
+
                 territorios.pop_back();
 
                 for (int i = 0; i < tecno.size(); i++) {
@@ -348,19 +330,14 @@ void TerritorioJogador::evento() {
                     }
                 }
             }
-            else
-            {
-                cout << "VOCE PERDEU IHIHI" << endl;
-                //falta aqui mostrar aquelas cenad do fim do jogo
-                //O somatório dos pontos de vitória correspondentes aos territórios que integram o seu império;
-                //Um ponto adicional por cada tecnologia adquirida;
-                //Um ponto adicional caso tenham sido adquiridas 5 tecnologias (bónus científico);
-                //Três pontos adicionais se todos os terrenos do mundo fizerem parte do império (é o bónus “imperador supremo”).
-                cout << aviso_final() << endl;
 
-            }
         }
-*/
+        else if(territorios.size()==0)
+        {
+            cout << aviso_final() << endl;
+            exit(0);
+        }
+
     }
     else if( j == 3)
     {
@@ -395,15 +372,15 @@ void TerritorioJogador::eventoforcado(string tipo) {
             }
 
         }
-    /* else if(tipo == "Invasão")
+     else if(tipo == "Invasão")
      {/*
        cout << "Calhou a Invasão" << endl;
          int k;
          k = randomsorte() + 2; // 2 no primeiro ano e 3 no segundo
-
+         if(territorios.size()>=1) {
          if( k > territorios.back()->getResis())
          {
-             if(territorios.size()>=1) {
+
                  territorios.pop_back();
 
                  for (int i = 0; i < tecno.size(); i++) {
@@ -412,20 +389,17 @@ void TerritorioJogador::eventoforcado(string tipo) {
                      }
                  }
              }
-             else
+         }
+             else if( territorios.size()==0)
              {
-                 cout << "VOCE PERDEU IHIHI" << endl;
-                 //falta aqui mostrar aquelas cenad do fim do jogo
-                 //O somatório dos pontos de vitória correspondentes aos territórios que integram o seu império;
-                 //Um ponto adicional por cada tecnologia adquirida;
-                 //Um ponto adicional caso tenham sido adquiridas 5 tecnologias (bónus científico);
-                 //Três pontos adicionais se todos os terrenos do mundo fizerem parte do império (é o bónus “imperador supremo”).
-                  cout << aviso_final();
+
+                  cout << aviso_final() << endl;
+                  exit(0);
 
              }
-         }
 
-        }*/
+
+        }
         else if( tipo == "Aliança Diplomática")
         {
             cout << "Calhou Aliança Diplomática" << endl;
@@ -435,7 +409,7 @@ void TerritorioJogador::eventoforcado(string tipo) {
                 forcamilitar+=1;
 
             }
-
+*/
         }
         else if(tipo == "Sem Evento")
         {
@@ -477,13 +451,16 @@ void TerritorioJogador::recolha(int f) {
                     if(ouro<cofremax)
                         ouro+=3;
                 }
-                else
+                else {
+
                     ouro++;
+                }
 
             }
             if(territorios[i]->getTipo()=="planicie")
             {
                 if(f<=6) {
+
                     if (ouro < cofremax) {
                         ouro++;
                     }
@@ -492,6 +469,7 @@ void TerritorioJogador::recolha(int f) {
                 }
                 else if(f>6)
                 {
+
                     if (ouro < cofremax) {
                         ouro++;
                     }
@@ -547,6 +525,73 @@ void TerritorioJogador::recolha(int f) {
             }
        }
 }
+
+bool TerritorioJogador::verificaBolsa() {
+
+    if(tecno.size()>=1) {
+        cout <<"ola entrei no ciclo1" << endl;
+        for (int i = 0; i < tecno.size(); i++) {
+            if (tecno[i]->getTipo() == "bolsa valores" || tecno[i]->getTipo() == "Bolsa Valores")
+              return true;
+        }
+        return true;
+    }
+
+
+}
+
+bool TerritorioJogador::trocabols(int f) {
+    if(f==1)
+    {
+        if(ouro >=2 && produtos<armazemmax) {
+            ouro -= 2;
+            produtos++;
+            return true;
+        }
+    }
+    else if(f==2)
+    {
+        if(produtos>=2 && ouro<cofremax) {
+            produtos-= 2;
+            ouro++;
+            return true;
+        }
+    }
+    return false;
+}
+
+string TerritorioJogador::stringOuro() {
+    ostringstream os;
+    os << "Ouro no cofre: " << ouro << " ,capacidade max do cofre: " << cofremax << endl;
+    return os.str();
+}
+
+string TerritorioJogador::stringProdutos() {
+    ostringstream os;
+    os << "Produtos no armazem: " << produtos << " ,capacidade max do armazem: " << armazemmax << endl;
+    return os.str();
+}
+
+string TerritorioJogador::stringmilitar() {
+    ostringstream os;
+    os << "Forca militar: " << ouro << " ,limite da forca militar: " << limforca << endl;
+    return os.str();
+}
+
+string TerritorioJogador::stringjuntas() {
+   ostringstream os;
+   os << stringOuro() <<endl;
+   os << stringProdutos() << endl;
+   os << stringmilitar() << endl;
+    return os.str();
+}
+
+
+
+
+
+
+
 
 
 

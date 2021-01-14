@@ -20,7 +20,6 @@ public:
     bool addTerritorio(string tipo, int quant);
     string mostra() const ;
     bool conquista(string tipo);
-    string lista() ;
     bool adquire(string tipo);
     bool mouro();
     bool mproduto();
@@ -43,6 +42,12 @@ public:
     int faseq();
     string aviso_final();
     int getfase();
+    int getTurno();
+    bool trocabola(int num);
+    bool verificabolsa();
+    string mundoresta();
+    string fimturno();
+    string tecnologias();
 };
 
 #endif //UNTITLED1_LOGICA_H

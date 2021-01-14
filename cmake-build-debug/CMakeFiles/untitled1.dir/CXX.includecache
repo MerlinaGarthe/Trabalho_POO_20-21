@@ -6,6 +6,32 @@
 
 #IncludeRegexTransform: 
 
+/Users/merlinagarthe/CLionProjects/trabalho/interface.cpp
+interface.h
+/Users/merlinagarthe/CLionProjects/trabalho/interface.h
+string
+-
+fstream
+-
+sstream
+-
+logica.h
+/Users/merlinagarthe/CLionProjects/trabalho/logica.h
+
+/Users/merlinagarthe/CLionProjects/trabalho/interface.h
+logica.h
+/Users/merlinagarthe/CLionProjects/trabalho/logica.h
+
+/Users/merlinagarthe/CLionProjects/trabalho/logica.h
+mundo.h
+/Users/merlinagarthe/CLionProjects/trabalho/mundo.h
+iostream
+-
+vector
+-
+string
+-
+
 /Users/merlinagarthe/CLionProjects/trabalho/mundo.h
 iostream
 -
@@ -38,21 +64,9 @@ iostream
 territorio.h
 /Users/merlinagarthe/CLionProjects/trabalho/territorio.h
 
-/Users/merlinagarthe/CLionProjects/trabalho/territorioJogador.cpp
-territorioJogador.h
 /Users/merlinagarthe/CLionProjects/trabalho/territorioJogador.h
-mundo.h
-/Users/merlinagarthe/CLionProjects/trabalho/mundo.h
-territorio.h
-/Users/merlinagarthe/CLionProjects/trabalho/territorio.h
-territorioI.h
-/Users/merlinagarthe/CLionProjects/trabalho/territorioI.h
-sstream
+climits
 -
-string
--
-
-/Users/merlinagarthe/CLionProjects/trabalho/territorioJogador.h
 iostream
 -
 vector

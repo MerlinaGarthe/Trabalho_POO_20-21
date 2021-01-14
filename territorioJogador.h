@@ -1,3 +1,4 @@
+#include <climits>
 //
 // Created by Merlina Garthe on 01/12/2020.
 //
@@ -32,16 +33,12 @@ public:
     TerritorioJogador() ;
     string getForcaMil();
     string getResis();
-    //string getNome() const;
-    int getOuro() ;
-    //string getAsString() const;
     int random();
     void conquista(Territorio &ter);
-    string getAsString2() const;
     string getAsString() const;
-    void adquire(string tipo) ;
-   // string getTipo() const;
+    bool adquire(string tipo) ;
     bool maisOuro();
+    int getOuro();
     bool maisproduto();
    bool maismilitar();
    bool encontra();
@@ -58,6 +55,13 @@ public:
     bool verifica (Territorio &ter);
     string aviso_final();
     void recolha(int f);
+    bool verificaBolsa();
+    bool trocabols(int f);
+    string stringOuro();
+    string stringProdutos();
+    string stringmilitar();
+    string stringjuntas();
+    int percorretec();
 };
 
 #endif

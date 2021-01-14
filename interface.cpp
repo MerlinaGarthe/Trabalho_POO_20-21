@@ -9,11 +9,31 @@
 
 int Interface::fase=1;
 int Interface::flag=0;
+int Interface::flag2=0;
+int Interface::flag3=0;
 
 void Interface::comandosi() //aqui vamos verificar os comando cria, lista e carrega (e conquista)
 {
     string comando, comando_cmp, tipo_t, fich, comando_cmp1, tipo_t1, nome, tipo;
     int quantidade, quantidade1;
+
+    cout << "*****************************************************************************************************" << endl;
+    cout << "Comandos disponiveis ao longo do jogo: " << endl;
+    cout << "-> maisouro (1 de ouro, perdendo 2 de produtos);" << endl;
+    cout << "-> maisprod (1 de produtos, perdendo 2 de ouro);" << endl;
+    cout << "-> maismilitar (compra uma unidade militar,reduz uma unidade de produtos e uma de ouro);" << endl;
+    cout << "-> lista (informação geral do jogo);" << endl;
+    cout << "-> lista tudo (todos os territorios existentes no mundo);" << endl;
+    cout << "-> lista meu (os territorios conquistados, quantidade de ouro e prod, pontos acumulados, resistencia e forca militar); " << endl;
+    cout << "-> lista resta (territorios do mundo que ainda não foram conquistados);" << endl;
+    cout << "-> lista <territorio> (mostra a resistencia desse territorio em especifico) "<< endl;
+    cout << "*****************************************************************************************************\n" << endl;
+    cout << "\n***************************************************************************" << endl;
+    cout << "Comandos por fases: " << endl;
+    cout << "-> 1ª fase: conquista <territorio> ou passa" << endl;
+    cout << "-> 2ª fase: se tiver a tecnologia bolsa valores pode ser utilizada" << endl;
+    cout << "-> 3ª fase: adquire <tecnologia> ou maismilitar" << endl;
+    cout << "****************************************************************************\n" << endl;
 
         do {
 
@@ -25,11 +45,17 @@ void Interface::comandosi() //aqui vamos verificar os comando cria, lista e carr
             is>> comando_cmp;//>> tipo_t >> quantidade >> tipo; //aqui a string vai ser dividida e o comando_cmp = cria/carrega..., o tipo_t= castelo..., o quantidade= nº desejado
 
             if (comando_cmp == "cria") {
-                if (is >> tipo_t && is >> quantidade) {
-                    logica.addTerritorio(tipo_t, quantidade);
-                    quantidade = 1;
-                    tipo_t = " ";
+                if(flag3==0) {
+                    if (is >> tipo_t && is >> quantidade) {
+                        if (logica.addTerritorio(tipo_t, quantidade))
+                            cout << "Foram adicionados territorios ao mundo. Pode consultar no comando lista tudo\n"
+                                 << endl;
+                        quantidade = 1;
+                        tipo_t = " ";
+                    }
                 }
+                else
+                    cout << "Comando impossivel!\n"<< endl;
             } else if (comando_cmp == "carrega") {
                 string linha;
                 is >> tipo_t;
@@ -45,19 +71,32 @@ void Interface::comandosi() //aqui vamos verificar os comando cria, lista e carr
                                 linha); // o os contem o conteudo da linha do ficheiro para os posteriormente podermos dividir e comparar
                         os >> comando_cmp1;
                         if (comando_cmp1 == "cria") {
-
-                            os >> tipo_t1 >> quantidade1;
-                            logica.addTerritorio(tipo_t1, quantidade1);
-                            quantidade1 = 1;
-                            tipo_t1 = " ";
-
+                            if(flag3==0) {
+                                os >> tipo_t1 >> quantidade1;
+                                if (logica.addTerritorio(tipo_t1, quantidade1))
+                                    cout
+                                            << "Foram adicionados territorios ao mundo. Pode consultar no comando lista tudo\n"
+                                            << endl;
+                                quantidade1 = 1;
+                                tipo_t1 = " ";
+                            }
                         } else if (comando_cmp1 == "conquista") {
-                            os >> tipo_t1;
-                            //logica.conquista(tipo_t1);
-                            cmd = logica.getAs1(comando_cmp1, tipo_t1);
-                            logica.addcomando(cmd);
-                            tipo_t1 = " ";
 
+                            if(logica.getfase()==1 && flag==0) {
+                                if (os >> tipo_t)
+                                    // logica.conquista(tipo_t);
+                                    cmd = logica.getAs1(comando_cmp, tipo_t);
+                                logica.addcomando(cmd);
+                                if(logica.conquista())
+                                    cout << "Conseguiu adquirir o território!Pode consultar no comando lista meu\n" <<endl;
+                                else
+                                    cout << "Não conseguiu adquirir o territótio! " << endl;
+                                flag=1;
+                            }
+                            else
+                            {
+                                cout << "comando impossivel nesta fase\n" << endl;
+                            }
                         }
 
                     }
@@ -73,63 +112,91 @@ void Interface::comandosi() //aqui vamos verificar os comando cria, lista e carr
                     tipo_t = " ";
 
                 } else {
-                    cout << logica.lista() << endl;
+                    cout << logica.fimturno() << endl;
                     tipo_t = " ";
                     comando_cmp = " ";
                 }
             } else if (comando_cmp == "conquista") {
-                if(logica.getfase()==1) {
+                if(logica.getfase()==1 && flag==0) {
                     if (is >> tipo_t)
                         // logica.conquista(tipo_t);
                         cmd = logica.getAs1(comando_cmp, tipo_t);
                     logica.addcomando(cmd);
-                    logica.conquista();
+                    if(logica.conquista())
+                        cout << "Conseguiu adquirir o território!Pode consultar no comando lista meu\n" <<endl;
+                    else
+                        cout << "Não conseguiu adquirir o territótio!\n " << endl;
+                    flag=1;
                 }
                 else
                 {
-                    cout << "comando impossivel nesta fase" << endl;
+                    cout << "comando impossivel nesta fase\n" << endl;
                 }
 
             } else if (comando_cmp == "passa")
             {
-                if(logica.getfase()==1 ) {
-                    cout << "Nenhum territorio foi conquistado" << endl;
+                if(logica.getfase()==1 && flag==0 ) {
+                    cout << "Nenhum territorio foi conquistado\n" << endl;
+                    flag =1;
                 }
                 else
                 {
-                    cout << "comando impossivel nesta fase" << endl;
+                    cout << "comando impossivel nesta fase\n" << endl;
                 }
             }
             else if (comando_cmp == "adquire") {
-                if(logica.getfase()==3) {
+                if(logica.getfase()==3 && flag2==0) {
                     if (is >> tipo_t >> tipo)
                         tipo = logica.getAs1(tipo_t, tipo);
                     cmd = logica.getAs1(comando_cmp, tipo);
                     logica.addcomando(cmd);
                     //logica.adquire(cmd);
-                    logica.adquire();
+                    if(!logica.adquire())
+                        cout << "Adquiriu uma nova tecnologia. Pode consultar no comando lista meu\n" << endl;
+                    else
+                        cout << "Não consegiu adquirir a tecnologia\n" << endl;
+                    flag2=1;
+                }
+                else
+                {
+                    cout << "comando impossivel nesta fase\n" << endl;
                 }
             }
             else if (comando_cmp == "maisouro") {
-                logica.mouro();
+                if(logica.mouro())
+                    cout << "Adicionou uma de ouro ao seu cofre.Pode consultar no comando lista meu\n" << endl;
+                else
+                    cout << "Espaço ou saldo insuficiente!\n" << endl;
                 logica.getAs2(comando_cmp);
             }
             else if (comando_cmp == "maisprod") {
-                logica.mproduto();
+                if(logica.mproduto())
+                {cout << "Adicionou uma de produtos ao seu cofre.Pode consultar no comando lista meu\n" << endl;}
+                else
+                    cout << "Espaço ou saldo insuficiente!\n" << endl;
                 logica.getAs2(comando_cmp);
             }
             else if (comando_cmp == "maismilitar") {
-                logica.mmilitar();
-                logica.getAs2(comando_cmp);
+                if(logica.getfase()==3 && flag2==0) {
+                    if(!logica.mmilitar())
+                        cout << "Obteve mais uma unidade militar!Pode consultar no comando lista meu\n" << endl;
+                    else
+                        cout << "Saldo insuficiente!\n" << endl;
+                    logica.getAs2(comando_cmp);
+                    flag2=1;
+               }
+                else
+                    cout << "comando impossivel nesta fase\n" << endl;
             }
             else if (comando_cmp == "toma") {
                 if (is >> tipo_t) {
                     if (tipo_t == "tec") {
-                        if (is >> tipo)
-                            logica.tomatec(tipo);
+                        if (is >> tipo >> tipo_t)
+                            cmd=logica.getAs1(tipo,tipo_t);
+                            logica.tomatec(cmd);
+
                     } else if (tipo_t == "terr") {
                         if (is >> tipo) {
-
                             logica.tomaterr(tipo);
                         }
                     }
@@ -138,11 +205,17 @@ void Interface::comandosi() //aqui vamos verificar os comando cria, lista e carr
             else if (comando_cmp == "modifica") {
                 if (is >> tipo_t && is >> quantidade) {
                     if (tipo_t == "ouro") {
-                        logica.mudaOuro(quantidade);
+                        if(logica.mudaOuro(quantidade))
+                            cout << "Alterou a quantidade de  ouro existente no cofre.Pode consultar no comando lista meu\n" << endl;
+                        else
+                            cout << "Espaço insuficiente.\n"<<endl;
                     }
                     else if (tipo_t == "prod") {
-                        logica.mudaProd(quantidade);
-                    }
+                        if(logica.mudaProd(quantidade))
+                            cout << "Alterou a quantidade de produto existente no armazem.Pode consultar no comando lista meu\n" << endl;
+                        else
+                            cout << "Espaço insuficiente.\n"<<endl;
+                   }
                 }
             }
             else if (comando_cmp == "evento") {
@@ -151,11 +224,52 @@ void Interface::comandosi() //aqui vamos verificar os comando cria, lista e carr
             }
             else if (comando_cmp == "fevento") {
                 if (is >> tipo_t)
-                    logica.eventoforcado(tipo_t);
+                   if( logica.eventoforcado(tipo_t))
+                       cout << "Vai ser realizado o evento: " << tipo_t << "\n" << endl;
             }
              else if (comando_cmp == "avanca") {
+
                 logica.avanca();
+                if(logica.getTurno()<=6)
+                    cout << "\nANO 1, turno: "<< logica.getTurno() << " ,fase " << logica.getfase()<< "\n" << endl;
+                else
+                    cout << "\nANO 2, turno: "<< logica.getTurno() << " ,fase " << logica.getfase() << "\n" << endl;
+
+                if(logica.getfase()==2) {
+                    cout << "Recolha de bens de todos os seus territorios. \n" << endl;
+
+                   /* if(logica.verificabolsa())
+                        cout << "Não possui a tecnologia bola de valores. Se quiseres comprar insira o comando adquire bolsa valores na fase 3";
+                   /* else {
+                        cout<< "Escola uma opção: 1- trocar duas unidades de ouro por uma de produtos; 2-trocar duas unidades de ouro por uma de produtos;\n Se não quiser nenhuma das opções digitar avanca"
+                                << endl;
+                        if(is >> quantidade)
+                        {
+                            if(quantidade==1 || quantidade==2)
+                                if(logica.trocabola(quantidade))
+                                    cout << "Troca efetuada com sucesso.\n" << endl;
+                                else
+                                    cout << "Não possui meios suf\n" << endl;
+                        }
+                    }*/
+                }
+                if(logica.getfase()==1)
+                {
+                    cout << "Comandos disponiveis: -> conquista <territorio> ou passa \n" << endl;
+               }
+                if(logica.getfase()==3)
+                {
+                    cout << "Comandos disponiveis: -> adquire <tecnologia> ou maismilitar\n " << endl;
+                }
+                if(logica.getTurno()==13)
+                {
+                    cout << logica.aviso_final()<<endl;
+                    comando = "terminar";
+                }
                 logica.getAs2(comando_cmp);
+                flag=0;
+                flag2=0;
+                flag3=1;
             }
         } while (comando != "terminar");
 
@@ -169,7 +283,12 @@ void Interface::comandosi() //aqui vamos verificar os comando cria, lista e carr
 
         } else if (tipo == "cmd") {
             cout << logica.mostraCmd() << endl;
-        } else {
+        }
+        else if(tipo == "resta")
+        {
+            cout << logica.mundoresta() << endl;
+        }
+        else {
             cout << logica.cadamostra(tipo);
         }
 

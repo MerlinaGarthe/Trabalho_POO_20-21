@@ -23,10 +23,8 @@ public:
     string getAsString() const;        //mostrar o conteudo do vetor
     bool addTerritorio(string tipo, int quantidade);    //adicionar um territorio
     bool conquista(string nome);    //conquista os territorio
-    void adquire(string tipo);
+    bool adquire(string tipo);
     string imprimeTerritoriosJogador(); // imprimi o vetor de territorios conquistados
-    string imprimeMeu();
-    string imprimeTudo();
     bool ouro();
     bool produto();
     bool militar();
@@ -39,6 +37,10 @@ public:
     string cadamostra(string nome);
     string mostraPontos();
     bool recolha(int f);
+    bool bolsa();
+    bool trocabolsa(int m);
+    string mundoso();
+    string juntos();
 };
 
 #endif
