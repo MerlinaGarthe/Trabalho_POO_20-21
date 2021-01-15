@@ -48,6 +48,7 @@ public:
     string mundoresta();
     string fimturno();
     string tecnologias();
+
 };
 
 #endif //UNTITLED1_LOGICA_H

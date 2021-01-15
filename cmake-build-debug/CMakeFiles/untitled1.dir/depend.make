@@ -102,7 +102,6 @@ CMakeFiles/untitled1.dir/territorioI.cpp.o: ../territorio.h
 CMakeFiles/untitled1.dir/territorioI.cpp.o: ../territorioI.cpp
 CMakeFiles/untitled1.dir/territorioI.cpp.o: ../territorioI.h
 
-CMakeFiles/untitled1.dir/territorioJogador.cpp.o: ../mundo.h
 CMakeFiles/untitled1.dir/territorioJogador.cpp.o: ../tecnologias.h
 CMakeFiles/untitled1.dir/territorioJogador.cpp.o: ../territorio.h
 CMakeFiles/untitled1.dir/territorioJogador.cpp.o: ../territorioI.h

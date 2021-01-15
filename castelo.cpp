@@ -7,14 +7,27 @@
 
 int Castelo::num = 1;
 
+Castelo::Castelo(string tp, int resistencia, int pontos): conta (num++),Continente(tp,num,resistencia,p, o, pontos)  {
+
+}
+
 string Castelo::getAsString() const {
     ostringstream os;
     os << Territorio::getAsString();
     return os.str();
 }
 
+void Castelo::getturno(int f)
+{
+    if( f <=2 || (f >=7 && f <=8))
+    {
+        o=3;
 
-
+    }
+    else {
+        o=1;
+    }
+}
 
 
 

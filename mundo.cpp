@@ -241,6 +241,12 @@ string Mundo::juntos() {
     return os.str();
 }
 
+string Mundo::todos() {
+    ostringstream os;
+    os << tj.cadaterr() << endl;
+    return os.str();
+}
+
 
 
 

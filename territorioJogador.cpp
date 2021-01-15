@@ -1,10 +1,10 @@
-#include <climits>
+
+
 //
 // Created by Merlina Garthe on 01/12/2020.
 //
 
 #include "territorioJogador.h"
-#include "mundo.h"
 #include "territorio.h"
 #include "territorioI.h"
 #include <sstream>
@@ -24,20 +24,16 @@ TerritorioJogador::TerritorioJogador() {
    limforca=3;
    ouro =0;
     produtos=0;
-
-  //territorios.push_back(new TerritorioI());
+    territorios.push_back(new TerritorioI());
 }
 TerritorioJogador::~TerritorioJogador()
 {
-   /* for(auto c : territorios)
-    {
-        delete c;
-    }
-    territorios.clear();*/ //só apagar o territorio inicial
+    delete territorios[0];
+    territorios.clear();
 }
 
 int TerritorioJogador::random() {
-   //srand((unsigned)time(NULL));
+
     int x;
     x = rand() % 7;
     return x;
@@ -103,7 +99,7 @@ string TerritorioJogador::getAsString() const
 
     for (int i = 0; i < (int)territorios.size(); i++)	//percorre o vetor
     {
-        os << territorios[i]->getNome() << "-> Criacao de ouro: " << ouro << ", Criacao de produtos: " << produtos<< "\n";
+        os << territorios[i]->getNome() << "-> Ouro: " << ouro << ", Produtos: " << produtos<< "\n";
         os << "Pontos vitoria do Imperio: " << pontos << "\n";
         os << "Resistencia: " << territorios[i]->getResis() << endl;
         os << "Força militar: " << forcamilitar << endl;
@@ -229,11 +225,7 @@ bool TerritorioJogador::encontra() {
     return false;
 }
 
-string TerritorioJogador::aviso() const {
-    ostringstream os;
-    os << "Conseguiu conquistar este territorio!"  << endl;
-    return os.str();
-}
+
 
 
 bool TerritorioJogador::tam() {
@@ -442,25 +434,29 @@ string TerritorioJogador::aviso_final()  {
 }
 
 void TerritorioJogador::recolha(int f) {
-        for(int i=0; i< territorios.size(); i++)
+       for(int i=0; i< territorios.size(); i++)
         {
             if(territorios[i]->getTipo()=="Castelo")
             {
-                if(f <=2 || (f>=7 && f <=8))
+               if(f <=2 || (f>=7 && f <=8))
                 {
+                    criacao_o=3;
                     if(ouro<cofremax)
                         ouro+=3;
                 }
                 else {
-
+                    criacao_o=1;
                     ouro++;
                 }
+
+
 
             }
             if(territorios[i]->getTipo()=="planicie")
             {
                 if(f<=6) {
-
+                    criacao_o=1;
+                    criacao_p=1;
                     if (ouro < cofremax) {
                         ouro++;
                     }
@@ -469,7 +465,8 @@ void TerritorioJogador::recolha(int f) {
                 }
                 else if(f>6)
                 {
-
+                    criacao_o=1;
+                    criacao_p=2;
                     if (ouro < cofremax) {
                         ouro++;
                     }
@@ -482,6 +479,7 @@ void TerritorioJogador::recolha(int f) {
 
                 if(f>=3)
                 {
+                    criacao_p=1;
                     if (produtos < armazemmax)
                         produtos++;
                 }
@@ -489,22 +487,25 @@ void TerritorioJogador::recolha(int f) {
             if(territorios[i]->getTipo()=="Mina") {
 
                 if (f <= 3 || (f >= 7 && f <= 9)) {
+                    criacao_o=1;
                     if (ouro < cofremax)
                         ouro++;
                 } else if ((f > 3 && f <= 6) || (f > 9 && f <= 12)) {
+                    criacao_o=3;
                     if (ouro < cofremax)
                         ouro = +3;
                 }
             }
             if(territorios[i]->getTipo()=="Duna") {
 
+                criacao_p=1;
                 if (produtos < armazemmax)
                     produtos++;
 
             }
             if(territorios[i]->getTipo()=="Refugios")
             {
-
+                criacao_o=1;
                 if (ouro < cofremax)
                     ouro++;
 
@@ -513,15 +514,24 @@ void TerritorioJogador::recolha(int f) {
             {
 
                 if(f<=6) {
+                    criacao_p=2;
                     if (produtos < armazemmax)
                         produtos+=2;
                 }
                 else if(f>6)
                 {
+                    criacao_p=4;
                     if (produtos < armazemmax)
-                        produtos+=2;
+                        produtos+=4;
                 }
 
+            }
+            if(territorios[i]->getTipo()=="TerritorioInicial")
+            {
+                criacao_p=1;
+                criacao_o=1;
+                ouro++;
+                produtos++;
             }
        }
 }
@@ -583,6 +593,21 @@ string TerritorioJogador::stringjuntas() {
    os << stringOuro() <<endl;
    os << stringProdutos() << endl;
    os << stringmilitar() << endl;
+    return os.str();
+}
+
+int TerritorioJogador::getcriacao_o() {
+    return criacao_o;
+}
+
+string TerritorioJogador::cadaterr() {
+    ostringstream os;
+    for(int i=0; i< territorios.size(); i++)
+    {
+        os << "-> " << territorios[i]->getNome() << endl;
+        os << "Resistencia: " << territorios[i]->getResis() << endl;
+        os << "Criacao_ouro:" << getcriacao_o() << endl;
+    }
     return os.str();
 }
 

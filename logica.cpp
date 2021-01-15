@@ -216,7 +216,7 @@ string Logica::fimturno() {
         os << "Ano 1, turno " << getTurno() << endl;
     else if(getTurno()>6)
         os << "Ano 2, turno " << getTurno() << endl;
-    os << "Os seus territorios:\n" << m.imprimeTerritoriosJogador() << endl;
+    os << "Os seus territorios:\n" << /*m.imprimeTerritoriosJogador()*/ m.todos() << endl;
     os << "Territorios restantes no mundo:\n " << m.mundoso() << endl;
     os << "Dados: \n" << m.juntos() ;
     os << tecnologias() << endl;
@@ -233,5 +233,7 @@ string Logica::tecnologias() {
    os << "-> Banco Central (ao ser adquirida, esta tecnologia permite aumentar em duas unidades a capacidade de armazenamento do armazém e do cofre do império: passam poder armazenar até 5 de produtos e 5 unidades de ouro):" << endl;
     return os.str();
 }
+
+
 
 

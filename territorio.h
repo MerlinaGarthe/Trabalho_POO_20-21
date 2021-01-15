@@ -29,6 +29,7 @@ public:
     int getResis();
     void Nome() ;
     string getTipo() const;
+    virtual void getturno(int f) {}
     virtual string getAsString() const;
 };
 

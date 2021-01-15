@@ -9,6 +9,8 @@
 #include <string>
 #include "territorio.h"
 #include "tecnologias.h"
+
+
 using namespace std;
 
 class TerritorioJogador
@@ -42,7 +44,6 @@ public:
     bool maisproduto();
    bool maismilitar();
    bool encontra();
-   string aviso() const;
    bool tam() ;
    void toma(Territorio &ter);
    void tomatec(string tipo);
@@ -62,6 +63,8 @@ public:
     string stringmilitar();
     string stringjuntas();
     int percorretec();
+    int getcriacao_o();
+    string cadaterr();
 };
 
 #endif

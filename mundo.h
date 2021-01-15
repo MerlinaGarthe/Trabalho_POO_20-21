@@ -40,7 +40,8 @@ public:
     bool bolsa();
     bool trocabolsa(int m);
     string mundoso();
-    string juntos();
+   string juntos();
+   string todos();
 };
 
 #endif

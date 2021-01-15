@@ -19,10 +19,11 @@ class Castelo : public Continente
     int conta;
    int p;
    int o;
-   int fase;
+   int turno;
 public:
-    Castelo(string tp = "Castelo",   int resistencia = 7,int pontos = 1): conta (num++),Continente(tp,num,resistencia,p, o, pontos) {}
+    Castelo(string tp = "Castelo",   int resistencia = 7,int pontos = 1);
     string getAsString() const;
+    virtual void getturno(int f) override;
 
 };
 
