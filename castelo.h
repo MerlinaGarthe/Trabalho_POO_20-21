@@ -23,7 +23,6 @@ class Castelo : public Continente
 public:
     Castelo(string tp = "Castelo",   int resistencia = 7,int pontos = 1);
     string getAsString() const;
-    virtual void getturno(int f) override;
 
 };
 

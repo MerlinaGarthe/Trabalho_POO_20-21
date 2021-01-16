@@ -18,7 +18,6 @@ class Mundo {
 
 public:
     Mundo() {}
-
     ~Mundo();    //destrutor para no fim destroi o vetor dinamico
     string getAsString() const;        //mostrar o conteudo do vetor
     bool addTerritorio(string tipo, int quantidade);    //adicionar um territorio

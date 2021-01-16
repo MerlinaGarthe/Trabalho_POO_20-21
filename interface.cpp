@@ -151,10 +151,9 @@ void Interface::comandosi() //aqui vamos verificar os comando cria, lista e carr
                     cmd = logica.getAs1(comando_cmp, tipo);
                     logica.addcomando(cmd);
                     //logica.adquire(cmd);
-                    if(!logica.adquire())
-                        cout << "Adquiriu uma nova tecnologia. Pode consultar no comando lista meu\n" << endl;
-                    else
-                        cout << "Não consegiu adquirir a tecnologia\n" << endl;
+                    if(logica.adquire())
+                        cout << "Pode consultar no comando lista meu\n" << endl;
+
                     flag2=1;
                 }
                 else
@@ -164,25 +163,20 @@ void Interface::comandosi() //aqui vamos verificar os comando cria, lista e carr
             }
             else if (comando_cmp == "maisouro") {
                 if(logica.mouro())
-                    cout << "Adicionou uma de ouro ao seu cofre.Pode consultar no comando lista meu\n" << endl;
-                else
-                    cout << "Espaço ou saldo insuficiente!\n" << endl;
+                    cout << "Pode consultar no comando lista meu\n" << endl;
                 logica.getAs2(comando_cmp);
             }
             else if (comando_cmp == "maisprod") {
                 if(logica.mproduto())
-                {cout << "Adicionou uma de produtos ao seu cofre.Pode consultar no comando lista meu\n" << endl;}
-                else
-                    cout << "Espaço ou saldo insuficiente!\n" << endl;
+                {cout << "Pode consultar no comando lista meu\n" << endl;}
                 logica.getAs2(comando_cmp);
             }
             else if (comando_cmp == "maismilitar") {
                 if(logica.getfase()==3 && flag2==0) {
-                    if(!logica.mmilitar())
-                        cout << "Obteve mais uma unidade militar!Pode consultar no comando lista meu\n" << endl;
-                    else
-                        cout << "Saldo insuficiente!\n" << endl;
-                    logica.getAs2(comando_cmp);
+                    if(logica.mmilitar())
+                        cout << "Pode consultar no comando lista meu\n" << endl;
+
+                   //logica.getAs2(comando_cmp);
                     flag2=1;
                }
                 else
@@ -206,15 +200,12 @@ void Interface::comandosi() //aqui vamos verificar os comando cria, lista e carr
                 if (is >> tipo_t && is >> quantidade) {
                     if (tipo_t == "ouro") {
                         if(logica.mudaOuro(quantidade))
-                            cout << "Alterou a quantidade de  ouro existente no cofre.Pode consultar no comando lista meu\n" << endl;
-                        else
-                            cout << "Espaço insuficiente.\n"<<endl;
+                            cout << "Pode consultar no comando lista meu\n" << endl;
+
                     }
                     else if (tipo_t == "prod") {
                         if(logica.mudaProd(quantidade))
-                            cout << "Alterou a quantidade de produto existente no armazem.Pode consultar no comando lista meu\n" << endl;
-                        else
-                            cout << "Espaço insuficiente.\n"<<endl;
+                            cout << "Pode consultar no comando lista meu\n" << endl;
                    }
                 }
             }
@@ -239,14 +230,14 @@ void Interface::comandosi() //aqui vamos verificar os comando cria, lista e carr
                     cout << "Recolha de bens de todos os seus territorios. \n" << endl;
 
                    /* if(logica.verificabolsa())
-                        cout << "Não possui a tecnologia bola de valores. Se quiseres comprar insira o comando adquire bolsa valores na fase 3";
-                   /* else {
+                        cout << "Não possui a tecnologia bola de valores. Se quiseres comprar insira o comando adquire bolsa valores na fase 3" << endl;
+                    else {
                         cout<< "Escola uma opção: 1- trocar duas unidades de ouro por uma de produtos; 2-trocar duas unidades de ouro por uma de produtos;\n Se não quiser nenhuma das opções digitar avanca"
                                 << endl;
                         if(is >> quantidade)
-                        {
+                        {cout << quantidade << endl;
                             if(quantidade==1 || quantidade==2)
-                                if(logica.trocabola(quantidade))
+                               if(logica.trocabola(quantidade))
                                     cout << "Troca efetuada com sucesso.\n" << endl;
                                 else
                                     cout << "Não possui meios suf\n" << endl;

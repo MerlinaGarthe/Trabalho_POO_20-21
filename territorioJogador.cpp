@@ -113,20 +113,8 @@ string TerritorioJogador::getAsString() const
 }
 
 
-string TerritorioJogador::getForcaMil() {
 
 
-    ostringstream os;
-    os << "Força militar do territorio inicial:" << forcamilitar << endl;
-    return os.str();
-
-}
-
-string TerritorioJogador::getResis() {
-    ostringstream os;
-    os << "A resistencia é: " << resistencia << endl;
-    return os.str();
-}
 
 bool TerritorioJogador::adquire(string tipo) {
 
@@ -177,7 +165,7 @@ bool TerritorioJogador::adquire(string tipo) {
 
 bool TerritorioJogador::maisOuro() {
 
-        if(cofremax!=ouro && produtos>=2) {
+        if(ouro!=cofremax && produtos>=2) {
                     ouro++;
                     produtos -= 2;
                     return true;
@@ -200,9 +188,8 @@ bool TerritorioJogador::maisproduto() {
     return true;
 }
 
- int TerritorioJogador::getOuro() {
-    return ouro;
-}
+
+
 
 bool TerritorioJogador::maismilitar() {
 
@@ -211,9 +198,9 @@ bool TerritorioJogador::maismilitar() {
             forcamilitar++;
             ouro --;
             produtos--;
-
+            return true;
         }
-    return true;
+    return false;
 }
 
 bool TerritorioJogador::encontra() {
@@ -365,7 +352,7 @@ void TerritorioJogador::eventoforcado(string tipo) {
 
         }
      else if(tipo == "Invasão")
-     {/*
+     {
        cout << "Calhou a Invasão" << endl;
          int k;
          k = randomsorte() + 2; // 2 no primeiro ano e 3 no segundo
@@ -401,7 +388,7 @@ void TerritorioJogador::eventoforcado(string tipo) {
                 forcamilitar+=1;
 
             }
-*/
+
         }
         else if(tipo == "Sem Evento")
         {
@@ -530,8 +517,10 @@ void TerritorioJogador::recolha(int f) {
             {
                 criacao_p=1;
                 criacao_o=1;
-                ouro++;
-                produtos++;
+                if(ouro < cofremax)
+                    ouro++;
+                if(produtos < cofremax)
+                    produtos++;
             }
        }
 }
@@ -539,20 +528,20 @@ void TerritorioJogador::recolha(int f) {
 bool TerritorioJogador::verificaBolsa() {
 
     if(tecno.size()>=1) {
-        cout <<"ola entrei no ciclo1" << endl;
         for (int i = 0; i < tecno.size(); i++) {
             if (tecno[i]->getTipo() == "bolsa valores" || tecno[i]->getTipo() == "Bolsa Valores")
               return true;
         }
-        return true;
+
     }
 
-
+return false;
 }
 
 bool TerritorioJogador::trocabols(int f) {
     if(f==1)
     {
+
         if(ouro >=2 && produtos<armazemmax) {
             ouro -= 2;
             produtos++;

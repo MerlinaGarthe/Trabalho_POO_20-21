@@ -25,34 +25,30 @@ class TerritorioJogador
     int criacao_p ;
     int criacao_o ;
     int pontos;
-   int forcamilitar ; //Nivel de forÁa militar, falta fazer o nivel
+    int forcamilitar ; //Nivel de forÁa militar, falta fazer o nivel
     int limforca;
-   int ouro;
-   int produtos;
+    int ouro;
+    int produtos;
 public:
     ~TerritorioJogador();
-
     TerritorioJogador() ;
-    string getForcaMil();
-    string getResis();
     int random();
     void conquista(Territorio &ter);
     string getAsString() const;
     bool adquire(string tipo) ;
     bool maisOuro();
-    int getOuro();
     bool maisproduto();
-   bool maismilitar();
-   bool encontra();
-   bool tam() ;
-   void toma(Territorio &ter);
-   void tomatec(string tipo);
-   bool mudaOuro(int quant);
-   bool mudaProd(int quant);
-   int randomevento();
-   void evento();
-   int randomsorte();
-   void eventoforcado(string tipo);
+    bool maismilitar();
+    bool encontra();
+    bool tam() ;
+    void toma(Territorio &ter);
+    void tomatec(string tipo);
+    bool mudaOuro(int quant);
+    bool mudaProd(int quant);
+    int randomevento();
+    void evento();
+    int randomsorte();
+    void eventoforcado(string tipo);
     bool verifica (Territorio &ter);
     string aviso_final();
     void recolha(int f);

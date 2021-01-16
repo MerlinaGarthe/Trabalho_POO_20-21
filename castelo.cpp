@@ -17,17 +17,6 @@ string Castelo::getAsString() const {
     return os.str();
 }
 
-void Castelo::getturno(int f)
-{
-    if( f <=2 || (f >=7 && f <=8))
-    {
-        o=3;
-
-    }
-    else {
-        o=1;
-    }
-}
 
 
 
