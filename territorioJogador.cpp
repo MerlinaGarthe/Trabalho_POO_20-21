@@ -297,7 +297,7 @@ void TerritorioJogador::evento() {
        cout << "Calhou a Invasão" << endl;
         int k;
         k = randomsorte() + 2; // 2 no primeiro ano e 3 no segundo
-        if(territorios.size()>=1) {
+        if(territorios.size()>1) {
         if( k > territorios.back()->getResis())
         {
 
@@ -311,7 +311,7 @@ void TerritorioJogador::evento() {
             }
 
         }
-        else if(territorios.size()==0)
+        else if(territorios.size()==1)
         {
             cout << aviso_final() << endl;
             exit(0);
@@ -356,7 +356,7 @@ void TerritorioJogador::eventoforcado(string tipo) {
        cout << "Calhou a Invasão" << endl;
          int k;
          k = randomsorte() + 2; // 2 no primeiro ano e 3 no segundo
-         if(territorios.size()>=1) {
+         if(territorios.size()>1) {
          if( k > territorios.back()->getResis())
          {
 
@@ -369,7 +369,7 @@ void TerritorioJogador::eventoforcado(string tipo) {
                  }
              }
          }
-             else if( territorios.size()==0)
+             else if( territorios.size()==1)
              {
 
                   cout << aviso_final() << endl;

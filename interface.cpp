@@ -80,23 +80,6 @@ void Interface::comandosi() //aqui vamos verificar os comando cria, lista e carr
                                 quantidade1 = 1;
                                 tipo_t1 = " ";
                             }
-                        } else if (comando_cmp1 == "conquista") {
-
-                            if(logica.getfase()==1 && flag==0) {
-                                if (os >> tipo_t)
-                                    // logica.conquista(tipo_t);
-                                    cmd = logica.getAs1(comando_cmp, tipo_t);
-                                logica.addcomando(cmd);
-                                if(logica.conquista())
-                                    cout << "Conseguiu adquirir o território!Pode consultar no comando lista meu\n" <<endl;
-                                else
-                                    cout << "Não conseguiu adquirir o territótio! " << endl;
-                                flag=1;
-                            }
-                            else
-                            {
-                                cout << "comando impossivel nesta fase\n" << endl;
-                            }
                         }
 
                     }
@@ -252,10 +235,9 @@ void Interface::comandosi() //aqui vamos verificar os comando cria, lista e carr
                 {
                     cout << "Comandos disponiveis: -> adquire <tecnologia> ou maismilitar\n " << endl;
                 }
-                if(logica.getTurno()==13)
+                if(logica.getTurno()==12)
                 {
                     cout << logica.aviso_final()<<endl;
-                    comando = "terminar";
                 }
                 logica.getAs2(comando_cmp);
                 flag=0;
@@ -280,7 +262,7 @@ void Interface::comandosi() //aqui vamos verificar os comando cria, lista e carr
             cout << logica.mundoresta() << endl;
         }
         else {
-            cout << logica.cadamostra(tipo);
+            cout << logica.cadamostra(tipo); //ex: lista Duna7
         }
 
 

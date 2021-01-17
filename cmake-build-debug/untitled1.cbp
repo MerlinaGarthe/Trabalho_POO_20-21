@@ -80,12 +80,6 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/merlinagarthe/CLionProjects/trabalho/Grava.cpp">
-			<Option target="untitled1"/>
-		</Unit>
-		<Unit filename="/Users/merlinagarthe/CLionProjects/trabalho/Grava.h">
-			<Option target="untitled1"/>
-		</Unit>
 		<Unit filename="/Users/merlinagarthe/CLionProjects/trabalho/castelo.cpp">
 			<Option target="untitled1"/>
 		</Unit>

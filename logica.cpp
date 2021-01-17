@@ -99,18 +99,17 @@ string Logica::cadamostra(string nome) {
 
 
 bool Logica::avanca() {
-    if(turno!=12) {
-        fase++;
-
+    fase++;
+    if(turno!=11 ) {
         if (fase <= 4) {
             if (fase == 4) {
+                cout << "\nTurno: "<< getTurno() << " ,fase " << getfase() << "\n" << endl;
                 m.evento();
                 turno++;
                 fase = 1;
                 comandos.clear();
             }
-            if(fase==2)
-            {
+            if (fase == 2) {
 
                 m.recolha(turno);
 
@@ -118,6 +117,8 @@ bool Logica::avanca() {
 
         }
     }
+    else if(turno==11 && fase==5)
+    { exit(0);}
 
 }
     bool Logica::addcomando(string comando) {

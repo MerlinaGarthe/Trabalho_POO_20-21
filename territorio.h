@@ -28,7 +28,7 @@ public:
     int getResis();
     void Nome() ;
     string getTipo() const;
-    string getAsString() const;
+    virtual string getAsString() const;
     virtual Territorio*duplica() const = 0;
 
 };

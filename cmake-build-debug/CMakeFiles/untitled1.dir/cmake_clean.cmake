@@ -1,5 +1,4 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/untitled1.dir/Grava.cpp.o"
   "CMakeFiles/untitled1.dir/castelo.cpp.o"
   "CMakeFiles/untitled1.dir/continente.cpp.o"
   "CMakeFiles/untitled1.dir/duna.cpp.o"
