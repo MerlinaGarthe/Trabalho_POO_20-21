@@ -14,11 +14,13 @@ class Mina : public Continente
 
     int conta;
     static int num;
-
+    int o;
+    int p;
 
 public:
-    Mina(string tipo= "Mina",   int resistencia = 5,int criacao_o = 0,int pontos = 1): conta(num++), Continente(tipo,num ,resistencia,0, criacao_o, pontos) {}
+    Mina(string tipo= "Mina",   int resistencia = 5,int pontos = 1): conta(num++), Continente(tipo,num ,resistencia,0, o, pontos) {}
     string getAsString() const;
+    Mina* duplica() const {return new Mina (*this);}
 };
 
 #endif

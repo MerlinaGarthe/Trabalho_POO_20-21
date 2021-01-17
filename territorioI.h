@@ -11,9 +11,10 @@
 
 using namespace std;
 
-class TerritorioI : public Territorio{
+class TerritorioI : public Territorio {
 public:
-    TerritorioI(string tp = "TerritorioInicial", int resistencia = 9 , int prod=0, int ouro=0, int pontos=0) : Territorio(tp,0,resistencia, prod, ouro, pontos) {}
+    TerritorioI(string tp = "TerritorioInicial", int resistencia = 9, int prod = 0, int ouro = 0, int pontos = 0): Territorio(tp, 0, resistencia, prod, ouro, pontos) {}
+    TerritorioI* duplica() const {return new TerritorioI (*this);}
 };
 
 

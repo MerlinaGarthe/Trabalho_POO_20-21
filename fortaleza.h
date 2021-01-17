@@ -17,6 +17,7 @@ class Fortaleza : public Continente
 public:
     Fortaleza(string tipo = "Fortaleza",   int resistencia = 8,int pontos = 1) : conta(num++), Continente(tipo,num,resistencia,0, 0, pontos) {}
     string getAsString() const;
+    Fortaleza* duplica() const {return new Fortaleza (*this);}
 };
 
 #endif

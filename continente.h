@@ -17,5 +17,6 @@ public:
 
     Continente(string tp, int ct, int resis, int prod, int ou, int pont) :Territorio( tp, ct, resis, prod, ou, pont) {} //construtor que recebe o tipo de territorio
 
+
 };
 #endif

@@ -18,6 +18,7 @@ class Duna: public Continente
 public:
     Duna(string tipo = "Duna",   int resistencia = 4,int criacao_p = 0,int pontos = 1): conta (num++), Continente(tipo,num,resistencia,criacao_p,0, pontos) {}
     string getAsString() const;
+    Duna* duplica() const {return new Duna (*this);}
 };
 
 #endif

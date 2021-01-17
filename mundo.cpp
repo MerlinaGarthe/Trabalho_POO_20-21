@@ -247,6 +247,32 @@ string Mundo::todos() {
     return os.str();
 }
 
+Mundo::Mundo(const Mundo& ob) {
+    *this = ob;
+}
+
+
+Mundo &Mundo::operator=(const Mundo &novo) {
+    if (this == &novo) {
+        return *this;
+    }
+
+    for (unsigned int i = 0; i < te.size(); i++) {
+        delete te[i];
+    }
+    te.clear();
+
+    for (unsigned int i = 0; i < novo.te.size(); i++) {
+        Territorio* t = novo.te[i]->duplica();
+        te.push_back(t);
+
+    }
+    return *this;
+}
+
+
+
+
 
 
 

@@ -14,6 +14,7 @@ using namespace std;
 class Logica {
     Mundo m;
     vector <string> comandos;
+
     static int turno;
     static int fase;
 public:

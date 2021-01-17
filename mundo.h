@@ -41,6 +41,9 @@ public:
     string mundoso();
    string juntos();
    string todos();
+    Mundo(const Mundo& ob);
+    Mundo& operator=(const Mundo& other);
+
 };
 
 #endif

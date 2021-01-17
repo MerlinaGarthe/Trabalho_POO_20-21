@@ -17,6 +17,7 @@ class Refugios : public Ilhas
 public:
     Refugios(string tipo = "Refugios",   int resistencia = 9,int criacao_o = 1,int pontos = 2): conta(num++), Ilhas(tipo,num,resistencia,0, criacao_o, pontos) {}
     string getAsString() const;
+    Refugios* duplica() const {return new Refugios (*this);}
 };
 
 #endif

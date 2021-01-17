@@ -6,6 +6,12 @@
 
 #IncludeRegexTransform: 
 
+/Users/merlinagarthe/CLionProjects/trabalho/castelo.cpp
+castelo.h
+/Users/merlinagarthe/CLionProjects/trabalho/castelo.h
+sstream
+-
+
 /Users/merlinagarthe/CLionProjects/trabalho/castelo.h
 climits
 -
@@ -18,6 +24,10 @@ sstream
 continente.h
 /Users/merlinagarthe/CLionProjects/trabalho/continente.h
 
+/Users/merlinagarthe/CLionProjects/trabalho/continente.cpp
+continente.h
+/Users/merlinagarthe/CLionProjects/trabalho/continente.h
+
 /Users/merlinagarthe/CLionProjects/trabalho/continente.h
 iostream
 -
@@ -25,6 +35,12 @@ string
 -
 territorio.h
 /Users/merlinagarthe/CLionProjects/trabalho/territorio.h
+
+/Users/merlinagarthe/CLionProjects/trabalho/duna.cpp
+duna.h
+/Users/merlinagarthe/CLionProjects/trabalho/duna.h
+sstream
+-
 
 /Users/merlinagarthe/CLionProjects/trabalho/duna.h
 iostream
@@ -34,6 +50,12 @@ string
 continente.h
 /Users/merlinagarthe/CLionProjects/trabalho/continente.h
 
+/Users/merlinagarthe/CLionProjects/trabalho/fortaleza.cpp
+fortaleza.h
+/Users/merlinagarthe/CLionProjects/trabalho/fortaleza.h
+sstream
+-
+
 /Users/merlinagarthe/CLionProjects/trabalho/fortaleza.h
 iostream
 -
@@ -41,6 +63,10 @@ string
 -
 continente.h
 /Users/merlinagarthe/CLionProjects/trabalho/continente.h
+
+/Users/merlinagarthe/CLionProjects/trabalho/ilhas.cpp
+ilhas.h
+/Users/merlinagarthe/CLionProjects/trabalho/ilhas.h
 
 /Users/merlinagarthe/CLionProjects/trabalho/ilhas.h
 iostream
@@ -92,6 +118,12 @@ iostream
 interface.h
 /Users/merlinagarthe/CLionProjects/trabalho/interface.h
 
+/Users/merlinagarthe/CLionProjects/trabalho/mina.cpp
+mina.h
+/Users/merlinagarthe/CLionProjects/trabalho/mina.h
+sstream
+-
+
 /Users/merlinagarthe/CLionProjects/trabalho/mina.h
 iostream
 -
@@ -99,6 +131,12 @@ string
 -
 continente.h
 /Users/merlinagarthe/CLionProjects/trabalho/continente.h
+
+/Users/merlinagarthe/CLionProjects/trabalho/montanha.cpp
+montanha.h
+/Users/merlinagarthe/CLionProjects/trabalho/montanha.h
+sstream
+-
 
 /Users/merlinagarthe/CLionProjects/trabalho/montanha.h
 string
@@ -150,6 +188,12 @@ territorioJogador.h
 territorioI.h
 /Users/merlinagarthe/CLionProjects/trabalho/territorioI.h
 
+/Users/merlinagarthe/CLionProjects/trabalho/pescaria.cpp
+pescaria.h
+/Users/merlinagarthe/CLionProjects/trabalho/pescaria.h
+sstream
+-
+
 /Users/merlinagarthe/CLionProjects/trabalho/pescaria.h
 iostream
 -
@@ -158,6 +202,12 @@ string
 ilhas.h
 /Users/merlinagarthe/CLionProjects/trabalho/ilhas.h
 
+/Users/merlinagarthe/CLionProjects/trabalho/planicie.cpp
+planicie.h
+/Users/merlinagarthe/CLionProjects/trabalho/planicie.h
+sstream
+-
+
 /Users/merlinagarthe/CLionProjects/trabalho/planicie.h
 iostream
 -
@@ -165,6 +215,12 @@ string
 -
 continente.h
 /Users/merlinagarthe/CLionProjects/trabalho/continente.h
+
+/Users/merlinagarthe/CLionProjects/trabalho/refugios.cpp
+refugios.h
+/Users/merlinagarthe/CLionProjects/trabalho/refugios.h
+sstream
+-
 
 /Users/merlinagarthe/CLionProjects/trabalho/refugios.h
 iostream
@@ -180,11 +236,21 @@ iostream
 string
 -
 
+/Users/merlinagarthe/CLionProjects/trabalho/territorio.cpp
+territorio.h
+/Users/merlinagarthe/CLionProjects/trabalho/territorio.h
+sstream
+-
+
 /Users/merlinagarthe/CLionProjects/trabalho/territorio.h
 iostream
 -
 string
 -
+
+/Users/merlinagarthe/CLionProjects/trabalho/territorioI.cpp
+territorioI.h
+/Users/merlinagarthe/CLionProjects/trabalho/territorioI.h
 
 /Users/merlinagarthe/CLionProjects/trabalho/territorioI.h
 string

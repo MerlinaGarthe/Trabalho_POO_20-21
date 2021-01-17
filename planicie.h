@@ -14,10 +14,12 @@ class Planicie : public Continente
 
     static int num;
     int conta;
-
+    int o;
+    int p;
 public:
-    Planicie(string tipo = "planicie",   int resistencia = 5,int criacao_p = 0,int criacao_o = 0,int pontos = 1): conta(num++), Continente(tipo, num,resistencia,criacao_p, criacao_o, pontos) {}
+    Planicie(string tipo = "planicie",   int resistencia = 5,int pontos = 1): conta(num++), Continente(tipo, num,resistencia,p, o, pontos) {}
     string getAsString() const;
+    Planicie* duplica() const {return new Planicie(*this);}
 };
 
 #endif // !1

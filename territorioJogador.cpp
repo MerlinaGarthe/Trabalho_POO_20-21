@@ -427,23 +427,17 @@ void TerritorioJogador::recolha(int f) {
             {
                if(f <=2 || (f>=7 && f <=8))
                 {
-                    criacao_o=3;
                     if(ouro<cofremax)
                         ouro+=3;
                 }
                 else {
-                    criacao_o=1;
                     ouro++;
                 }
-
-
 
             }
             if(territorios[i]->getTipo()=="planicie")
             {
                 if(f<=6) {
-                    criacao_o=1;
-                    criacao_p=1;
                     if (ouro < cofremax) {
                         ouro++;
                     }
@@ -452,8 +446,7 @@ void TerritorioJogador::recolha(int f) {
                 }
                 else if(f>6)
                 {
-                    criacao_o=1;
-                    criacao_p=2;
+
                     if (ouro < cofremax) {
                         ouro++;
                     }
@@ -466,7 +459,6 @@ void TerritorioJogador::recolha(int f) {
 
                 if(f>=3)
                 {
-                    criacao_p=1;
                     if (produtos < armazemmax)
                         produtos++;
                 }
@@ -474,25 +466,21 @@ void TerritorioJogador::recolha(int f) {
             if(territorios[i]->getTipo()=="Mina") {
 
                 if (f <= 3 || (f >= 7 && f <= 9)) {
-                    criacao_o=1;
                     if (ouro < cofremax)
                         ouro++;
                 } else if ((f > 3 && f <= 6) || (f > 9 && f <= 12)) {
-                    criacao_o=3;
                     if (ouro < cofremax)
                         ouro = +3;
                 }
             }
             if(territorios[i]->getTipo()=="Duna") {
 
-                criacao_p=1;
                 if (produtos < armazemmax)
                     produtos++;
 
             }
             if(territorios[i]->getTipo()=="Refugios")
             {
-                criacao_o=1;
                 if (ouro < cofremax)
                     ouro++;
 
@@ -501,13 +489,12 @@ void TerritorioJogador::recolha(int f) {
             {
 
                 if(f<=6) {
-                    criacao_p=2;
                     if (produtos < armazemmax)
                         produtos+=2;
                 }
                 else if(f>6)
                 {
-                    criacao_p=4;
+
                     if (produtos < armazemmax)
                         produtos+=4;
                 }
@@ -515,8 +502,6 @@ void TerritorioJogador::recolha(int f) {
             }
             if(territorios[i]->getTipo()=="TerritorioInicial")
             {
-                criacao_p=1;
-                criacao_o=1;
                 if(ouro < cofremax)
                     ouro++;
                 if(produtos < cofremax)

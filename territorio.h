@@ -20,16 +20,17 @@ class Territorio
     int Ouro ;
     int pontos ;
 public:
-
     Territorio(string tp, int ct, int resis, int prod, int ou, int pont) ;//construtor que recebe o tipo de territorio
-    string getNome() const;	// retorna o nome do territorio para ser usado no getAsString
+     string getNome() const;	// retorna o nome do territorio para ser usado no getAsString
     int getOuro();
     int getProd();
     int getPontos();
     int getResis();
     void Nome() ;
     string getTipo() const;
-    virtual string getAsString() const;
+    string getAsString() const;
+    virtual Territorio*duplica() const = 0;
+
 };
 
 

@@ -143,6 +143,33 @@ untitled1/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled1.dir/build.make CMakeFiles/untitled1.dir/build
 .PHONY : untitled1/fast
 
+Grava.o: Grava.cpp.o
+
+.PHONY : Grava.o
+
+# target to build an object file
+Grava.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled1.dir/build.make CMakeFiles/untitled1.dir/Grava.cpp.o
+.PHONY : Grava.cpp.o
+
+Grava.i: Grava.cpp.i
+
+.PHONY : Grava.i
+
+# target to preprocess a source file
+Grava.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled1.dir/build.make CMakeFiles/untitled1.dir/Grava.cpp.i
+.PHONY : Grava.cpp.i
+
+Grava.s: Grava.cpp.s
+
+.PHONY : Grava.s
+
+# target to generate assembly for a file
+Grava.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled1.dir/build.make CMakeFiles/untitled1.dir/Grava.cpp.s
+.PHONY : Grava.cpp.s
+
 castelo.o: castelo.cpp.o
 
 .PHONY : castelo.o
@@ -638,6 +665,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... untitled1"
+	@echo "... Grava.o"
+	@echo "... Grava.i"
+	@echo "... Grava.s"
 	@echo "... castelo.o"
 	@echo "... castelo.i"
 	@echo "... castelo.s"
